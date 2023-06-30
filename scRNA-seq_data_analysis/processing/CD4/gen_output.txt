@@ -1,0 +1,34 @@
+############    --------   scRNA-seq ANALYSIS    --------    ############
+############    ------------   USING SEURAT   -----------    ############
+By Vicente Fajardo
+
+
+
+### --------------------------- Libraries --------------------------- ###
+Importing libraries...
+
+Libraries imported!
+
+
+
+### ------------------------ Parallelisation ------------------------ ###
+
+
+### --------------------------- Arguments --------------------------- ###
+General reports path: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-1/output 
+Abolute path to count matrix file: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix 
+Project name: CD4_Round-1 
+Filtering arguments:
+Minimum and maximum thresholds for counts number per cell: 1500 and 20000 
+Minimum and maximum thresholds for genes number per cell: 800 and 4400 
+Maximum mitochondrial genes percentage per cell: 1500 
+Normalization method: LogNormalize 
+Variable features selection method: vst 
+Number/Percentage of most variable genes to be considered 30 
+Resolution value(s) for clustering analysis: 0.1, 0.4 
+Values of PCs to be taken into account for dimensionality reduction: 30 
+Should pairwise comparisons among clusters (DEA) be applied? FALSE 
+
+
+
+### ------------------------- Data Loading ------------------------- ###

@@ -1,0 +1,1097 @@
+cat: /var/spool/torque/aux//5548694.herman.hpc.lji.orggpu: No such file or directory
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:dplyr':
+
+    between, first, last
+
+Loading required package: ggraph
+Loading required package: Rcpp
+
+Attaching package: 'gridExtra'
+
+The following object is masked from 'package:dplyr':
+
+    combine
+
+Warning message:
+Strategy 'multiprocess' is deprecated in future (>= 1.20.0). Instead, explicitly specify either 'multisession' or 'multicore'. In the current R session, 'multiprocess' equals 'multicore'. 
+Warning message:
+In if (file.exists(vars.to.regress)) vars.to.regress <- read.csv(file = vars.to.regress,  :
+  the condition has length > 1 and only the first element will be used
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Warning messages:
+1: In validGP(list(...)) : NAs introduced by coercion
+2: Removed 29 rows containing non-finite values (stat_ydensity). 
+3: In validGP(list(...)) : NAs introduced by coercion
+4: In validGP(list(...)) : NAs introduced by coercion
+5: In validGP(list(...)) : NAs introduced by coercion
+6: Removed 23 rows containing non-finite values (stat_ydensity). 
+7: In validGP(list(...)) : NAs introduced by coercion
+8: In validGP(list(...)) : NAs introduced by coercion
+Calculating gene variances
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Calculating feature variances of standardized and clipped values
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+When using repel, set xnudge and ynudge to 0 for optimal results
+Regressing out nCount_RNA, percent.mt
+Centering and scaling data matrix
+Warning messages:
+1: UNRELIABLE VALUE: One of the 'future.apply' iterations ('future_lapply-1') unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+2: UNRELIABLE VALUE: One of the 'future.apply' iterations ('future_lapply-2') unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+3: UNRELIABLE VALUE: One of the 'future.apply' iterations ('future_lapply-3') unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+4: UNRELIABLE VALUE: One of the 'future.apply' iterations ('future_lapply-4') unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+5: UNRELIABLE VALUE: One of the 'future.apply' iterations ('future_lapply-5') unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+6: UNRELIABLE VALUE: One of the 'future.apply' iterations ('future_lapply-6') unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+7: UNRELIABLE VALUE: One of the 'future.apply' iterations ('future_lapply-7') unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+8: UNRELIABLE VALUE: One of the 'future.apply' iterations ('future_lapply-8') unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+PC_ 1 
+Positive:  ENSG00000112306, ENSG00000144713, ENSG00000164587, ENSG00000186468, ENSG00000231500, ENSG00000167526, ENSG00000162244, ENSG00000108298, ENSG00000143947, ENSG00000105640 
+	   ENSG00000156482, ENSG00000134419, ENSG00000142676, ENSG00000137818, ENSG00000149273 
+Negative:  ENSG00000215301, ENSG00000229807, ENSG00000245532, ENSG00000231721, ENSG00000243716, ENSG00000119801, ENSG00000138670, ENSG00000112149, ENSG00000203709, ENSG00000125740 
+	   ENSG00000230590, ENSG00000155657, ENSG00000119866, ENSG00000231074, ENSG00000138756 
+PC_ 2 
+Positive:  ENSG00000105374, ENSG00000115523, ENSG00000180644, ENSG00000100453, ENSG00000077984, ENSG00000275302, ENSG00000172543, ENSG00000173762, ENSG00000145649, ENSG00000198821 
+	   ENSG00000159674, ENSG00000011600, ENSG00000134539, ENSG00000271503, ENSG00000137441 
+Negative:  ENSG00000204287, ENSG00000227507, ENSG00000196126, ENSG00000223865, ENSG00000231389, ENSG00000198502, ENSG00000105369, ENSG00000179344, ENSG00000121966, ENSG00000169442 
+	   ENSG00000112149, ENSG00000167483, ENSG00000007312, ENSG00000188404, ENSG00000008988 
+PC_ 3 
+Positive:  ENSG00000099958, ENSG00000239264, ENSG00000170476, ENSG00000132465, ENSG00000173334, ENSG00000211895, ENSG00000180879, ENSG00000166562, ENSG00000123989, ENSG00000173486 
+	   ENSG00000026025, ENSG00000123131, ENSG00000048462, ENSG00000134285, ENSG00000139193 
+Negative:  ENSG00000110848, ENSG00000112149, ENSG00000133639, ENSG00000153234, ENSG00000173762, ENSG00000100453, ENSG00000077984, ENSG00000180644, ENSG00000275302, ENSG00000145649 
+	   ENSG00000130844, ENSG00000105374, ENSG00000111796, ENSG00000198821, ENSG00000011600 
+PC_ 4 
+Positive:  ENSG00000103187, ENSG00000085117, ENSG00000163568, ENSG00000002586, ENSG00000151575, ENSG00000150093, ENSG00000213145, ENSG00000240505, ENSG00000042493, ENSG00000197747 
+	   ENSG00000161929, ENSG00000198846, ENSG00000178075, ENSG00000216490, ENSG00000168461 
+Negative:  ENSG00000100721, ENSG00000170476, ENSG00000060138, ENSG00000184897, ENSG00000170345, ENSG00000183508, ENSG00000239264, ENSG00000112182, ENSG00000147535, ENSG00000120129 
+	   ENSG00000132465, ENSG00000077238, ENSG00000171223, ENSG00000135916, ENSG00000099958 
+PC_ 5 
+Positive:  ENSG00000125740, ENSG00000177606, ENSG00000171223, ENSG00000170345, ENSG00000160888, ENSG00000153234, ENSG00000120738, ENSG00000123358, ENSG00000128016, ENSG00000158050 
+	   ENSG00000130522, ENSG00000120129, ENSG00000100906, ENSG00000188229, ENSG00000132002 
+Negative:  ENSG00000100721, ENSG00000077238, ENSG00000167483, ENSG00000184226, ENSG00000145349, ENSG00000104921, ENSG00000147535, ENSG00000069493, ENSG00000112182, ENSG00000186265 
+	   ENSG00000171467, ENSG00000060138, ENSG00000082293, ENSG00000091972, ENSG00000187621 
+Harmony 1/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 2/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 3/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 4/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 5/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 6/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 7/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 8/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 9/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Harmony 10/10
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Warning: Invalid name supplied, making object name syntactically valid. New object name is Seurat..ProjectDim.RNA.harmony; see ?make.names for more details on syntax validity
+Warning message:
+CombinePlots is being deprecated. Plots should now be combined using the patchwork system. 
+Computing nearest neighbor graph
+Computing SNN
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+2 singletons identified. 6 final clusters.
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+2 singletons identified. 8 final clusters.
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+2 singletons identified. 11 final clusters.
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+2 singletons identified. 13 final clusters.
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+2 singletons identified. 14 final clusters.
+Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
+To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
+This message will be shown once per session
+21:57:57 UMAP embedding parameters a = 1.577 b = 0.8951
+21:57:57 Read 58778 rows and found 40 numeric columns
+21:57:57 Using Annoy for neighbor search, n_neighbors = 15
+21:57:57 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+21:58:07 Writing NN index file to temp file /mnt/beegfs/vfajardo/pbstmp.5548694.herman.hpc.lji.org/RtmpUWygGu/file5d581bad5745
+21:58:07 Searching Annoy index using 8 threads, search_k = 1500
+21:58:09 Annoy recall = 100%
+21:58:10 Commencing smooth kNN distance calibration using 8 threads
+21:58:11 Initializing from normalized Laplacian + noise
+21:58:13 Commencing optimization for 200 epochs, with 1381536 positive edges
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+21:59:19 Optimization finished
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+There were 23 warnings (use warnings() to see them)
+Calculating cluster 0
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 1
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 2
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 3
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 4
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 5
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 6
+Calculating cluster 7
+Calculating cluster 8
+Calculating cluster 9
+Calculating cluster 10
+Calculating cluster 11
+Calculating cluster 12
+Calculating cluster 13
+Warning: The following tests were not performed: 
+Warning: When testing 6 versus all:
+	Cannot find the following identities in the object: 6
+Warning: When testing 7 versus all:
+	Cannot find the following identities in the object: 7
+Warning: When testing 8 versus all:
+	Cannot find the following identities in the object: 8
+Warning: When testing 9 versus all:
+	Cannot find the following identities in the object: 9
+Warning: When testing 10 versus all:
+	Cannot find the following identities in the object: 10
+Warning: When testing 11 versus all:
+	Cannot find the following identities in the object: 11
+Warning: When testing 12 versus all:
+	Cannot find the following identities in the object: 12
+Warning: When testing 13 versus all:
+	Cannot find the following identities in the object: 13
+Calculating cluster 0
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 1
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 2
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 3
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 4
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 5
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 6
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 7
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 8
+Calculating cluster 9
+Calculating cluster 10
+Calculating cluster 11
+Calculating cluster 12
+Calculating cluster 13
+Warning: The following tests were not performed: 
+Warning: When testing 8 versus all:
+	Cannot find the following identities in the object: 8
+Warning: When testing 9 versus all:
+	Cannot find the following identities in the object: 9
+Warning: When testing 10 versus all:
+	Cannot find the following identities in the object: 10
+Warning: When testing 11 versus all:
+	Cannot find the following identities in the object: 11
+Warning: When testing 12 versus all:
+	Cannot find the following identities in the object: 12
+Warning: When testing 13 versus all:
+	Cannot find the following identities in the object: 13
+Calculating cluster 0
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 1
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 2
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 3
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 4
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 5
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 6
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 7
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 8
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 9
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 10
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 11
+Calculating cluster 12
+Calculating cluster 13
+Warning: The following tests were not performed: 
+Warning: When testing 11 versus all:
+	Cannot find the following identities in the object: 11
+Warning: When testing 12 versus all:
+	Cannot find the following identities in the object: 12
+Warning: When testing 13 versus all:
+	Cannot find the following identities in the object: 13
+Calculating cluster 0
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 1
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 2
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 3
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 4
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 5
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 6
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 7
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 8
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 9
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 10
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 11
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 12
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 13
+Warning: The following tests were not performed: 
+Warning: When testing 13 versus all:
+	Cannot find the following identities in the object: 13
+Calculating cluster 0
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 1
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 2
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 3
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 4
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 5
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 6
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 7
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 8
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 9
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 10
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 11
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 12
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Calculating cluster 13
+Assuming data assay in position 1, with name et is log-transformed.
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+There were 50 or more warnings (use warnings() to see the first 50)

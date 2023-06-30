@@ -1,0 +1,58 @@
+# ----> File to perform the scRNA-seq data analysis for the CD4 dataset of the DICE lung project
+
+import os
+
+configfile: 'config.yaml'
+
+def get_mem_mb(wildcards, round_id):
+    return config['{0}_mem'.format(round_id)]*1024
+
+def get_run_time(wildcards, round_id):
+    return config['{0}_time'.format(round_id)]*60
+
+rule all:
+    input:
+        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), config['param']['last_round_id'], config['param']['last_round_pc_no'])
+
+rule round_1:
+    input:
+        data_file=config['file']['cr_ref'],
+        cr_ref=config['file']['cr_ref'],
+        aggr_table='{0}/data/aggr_table.csv'.format(os.getcwd()),
+        donors_meta='{0}/data/donor_meta.csv'.format(os.getcwd()),
+        subset_crit='{0}/data/subset_crit.csv'.format(os.getcwd()),
+        markers_file='{0}/data/markers_file.RSD'.format(os.getcwd())
+    output:
+        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'CD4_Round-1', config['param']['round_1_pc_no'])
+    params:
+        round_id='CD4_Round-1',
+        seurat_script=config['app']['seurat_script'],
+        reports_path='{0}/{1}/output'.format(os.getcwd(), 'CD4_Round-1'),
+        min_counts=config['param']['min_counts'],
+        max_counts=config['param']['max_counts'],
+        min_feats=config['param']['min_feats'],
+        max_feats=config['param']['max_feats'],
+        max_mp=config['param']['max_mp'],
+        hvf_percent=config['param']['round_1_hvf_percent'],
+        pc_no=config['param']['round_1_pc_no'],
+        mem_gb=config['param']['round_1_mem']
+    log:
+        "logs/seurat_analysis/{0}.log".format('CD4_Round-1')
+    threads: 4
+    resources:
+        mem_mb=config['param']['round_1_mem']*1024,
+        runtime=config['param']['round_1_time']*60
+    shell:
+        "module load R/3.6.1\n"
+        "Rscript {params.seurat_script} "
+        "--ReportsPath {params.reports_path} --PrjName {params.round_id} "
+        "--DataFile {input.data_file} --Raw10x {input.cr_ref} --InputType matrix --FeatureID ensembl "
+        "--DoAnnotate TRUE --AggrTable {input.aggr_table} --DonorsMetaData {input.donors_meta} "
+        "--MergeBy donor.tag --LaneID 'species.tag;cell.type.tag;donors.sort.batch.tag;donors.no.tag;tissue.tag' --MultAnnPerLane TRUE "
+        "--ChromBatchID chrom.batch.tag --SeqBatchID seq.batch.tag --HTOID hashtag.tag --OverlayID donor.tag  "
+        "--DoSubset TRUE --TagsCriteria {input.subset_crit} "
+        "--minCounts {params.min_counts} --maxCounts {params.max_counts} --minFeatures {params.min_feats} --maxFeatures {params.max_feats} --maxMP {params.min_counts} "
+        "--FeatsForDSA {params.hvf_percent} --PCs {params.pc_no} --ForHarmony 'c(\"seq.batch.tag\")' "
+        "--Resolution 'c(0.1, 0.4)' --MeanCutoff 0.01 --PropCutoff 0.001 "
+        "--VarsToRegress 'c(\"nCount_RNA\", \"percent.mt\")'  --FilterOut TRUE "
+        "--MarkersFile {input.markers_file} --DimReduction 'c(\"umap\")' --RAM {params.mem_gb} 2> {log}"

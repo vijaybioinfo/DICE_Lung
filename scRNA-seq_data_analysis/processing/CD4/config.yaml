@@ -1,0 +1,21 @@
+{
+    'app': {
+        'seurat_script': '/home/vfajardo/shared_code/Seurat-based_scRNA-seq_Analysis_v2.3/R/master/general_seurat_analysis.2.3.R'
+    },
+    'file': {
+        'cr_ref': '/mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix'
+    },
+    'param': {
+        'last_round_id': 'CD4_Round-1',
+        'last_round_pc_no': 30,
+        'min_counts': 1500,
+        'max_counts': 20000,
+        'min_feats': 800,
+        'max_feats': 4400,
+        'max_mp': 10,
+        'round_1_hvf_percent': 30,
+        'round_1_pc_no': 30,
+        'round_1_mem': 400,
+        'round_1_time': 150
+    }
+}

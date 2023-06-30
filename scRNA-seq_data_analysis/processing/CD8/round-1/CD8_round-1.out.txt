@@ -1,0 +1,369 @@
+
+
+######### ------------- Job to Run Seurat Analysis ------------ #########
+
+
+### --------------------------- Arguments --------------------------- ###
+### --------------------- Job general arguments --------------------- ###
+Project name: R24_Cancer_Batches-1-to-20_CD8_Normal-lung
+Job output directory: /mnt/hpcscratch/vfajardo/R24/jobs_scripts/seurat_analysis//R24_Cancer_CD8/R24_Cancer_Batches-1-to-20_CD8_Normal-lung/R24_Cancer_Batches-1-to-20_CD8_Normal-lung_11-07-2022_qc-std_var-30_pc-30_hto-all_harmony-seq.batch.tag
+### ------------------- Seurat analysis arguments ------------------- ###
+Seurat script version (absolute path): /home/vfajardo/scripts/seurat_analysis/general_seurat_analysis.2.3.2.R
+Project name: R24_Cancer_Batches-1-to-20_CD8_Normal-lung
+Absolute path to count matrix file: 
+Feature ID: ensembl
+Minimum and maximum thresholds for counts number per cell: 1500 and 20000
+Minimum and maximum thresholds for genes number per cell: 800 and 4400
+Maximum mitochondrial genes percentage per cell: 10
+Normalization method: LogNormalize
+Variable features selection method: vst
+Number of most variable genes to be considered: 30
+Resolution argument for cluster analysis: 'c(0.1, 0.3, 0.5)'
+PCs to be taken into account for dimensionality reduction: 'c(30)'
+
+
+Mean cutoff: 0.01
+Should likely low quality cells be filtered out? TRUE
+Absolute path to markers file (or NULL value): /home/vfajardo/scripts/seurat_analysis/general_data/CD4_Tcell_markers_ENSEMBL_ID.1.0.0.RData
+### --------------------- Annotations arguments --------------------- ###
+Should annotations be added? TRUE (If FALSE, this chunk's variables' values don't really matter).
+Absolute path to annotations table: /mnt/BioAdHoc/Groups/vd-vijay/vfajardo/sequencing_data/05-14-2022/aggr/data/R24_Cancer_Batches-1-to-20_CD8_Normal-lung_aggr_table_annotated.1.0.csv
+Lane ID: 'species.tag;cell.type.tag;donors.sort.batch.tag;donors.no.tag;tissue.tag'
+10X Chromium Batch ID: chrom.batch.tag
+Sequencing batch ID: seq.batch.tag
+HTO ID: hashtag.tag
+Demuxlet ID: 
+Overlay ID: donor.tag
+### ---------------------- Filtering arguments ---------------------- ###
+Should there be any kind of preprocess filetring? TRUE (If FALSE, this chunk's variables' values don't really matter).
+Tags-related criteria: --TagsCriteria /mnt/BioAdHoc/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/data_for_subsetting/subset_hto-all/TagsSubsetCriteria.csv
+Features-related criteria: 
+Here starts analysis with R package seurat...
+
+
+############    --------   scRNA-seq ANALYSIS    --------    ############
+############    ------------   USING SEURAT   -----------    ############
+By Vicente Fajardo
+
+
+
+### --------------------------- Libraries --------------------------- ###
+Importing libraries...
+
+Libraries imported!
+
+
+
+### ------------------------ Parallelisation ------------------------ ###
+
+
+### --------------------------- Arguments --------------------------- ###
+General reports path: /mnt/hpcscratch/vfajardo/R24/seurat_analysis//R24_Cancer_CD8/R24_Cancer_Batches-1-to-20_CD8_Normal-lung/R24_Cancer_Batches-1-to-20_CD8_Normal-lung_11-07-2022_qc-std_var-30_pc-30_hto-all_harmony-seq.batch.tag 
+Abolute path to count matrix file: /mnt/hpcscratch/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD8_Normal-lung/outs/filtered_feature_bc_matrix 
+Project name: R24_Cancer_Batches-1-to-20_CD8_Normal-lung 
+Filtering arguments:
+Minimum and maximum thresholds for counts number per cell: 1500 and 20000 
+Minimum and maximum thresholds for genes number per cell: 800 and 4400 
+Maximum mitochondrial genes percentage per cell: 10 
+Normalization method: LogNormalize 
+Variable features selection method: vst 
+Number/Percentage of most variable genes to be considered 30 
+Resolution value(s) for clustering analysis: 0.4 
+Values of PCs to be taken into account for dimensionality reduction: 30 
+Should pairwise comparisons among clusters (DEA) be applied? FALSE 
+
+
+
+### ------------------------- Data Loading ------------------------- ###
+Data file imported. If standard errors, you should check the file before continuing with this program.
+
+Seurat object has been created!
+
+Annotations for seurat object cells have been loaded!
+
+Subset criteria loaded...
+
+
+
+### ------------------------- Annotations -------------------------- ###
+Seurat object has got annotations.
+
+
+### ------------------------ Tags Filtering ------------------------ ###
+Subsetting seurat object according to the criteria supplied...
+Seurat object subsetted!
+
+
+### --------------------- Quality control (QC) --------------------- ###
+Quality Control directory already exists.
+General QC assessment previous to filtering applied.
+
+Cell filtering applied using
+	cell counts threshold: 1500 and 20000 
+	gene thresholds: 800 and 4400 
+	Maximum mitochondrial gene percentage per cell: 10 
+
+General QC assessment after filtering applied.
+
+[[1]]
+NULL
+
+### -------------------- Feature selection and ------------------- ###
+### ----------------------- Normalization ------------------------ ###
+Feature selection directory already exists.
+
+### ------------------------ LogTransform ------------------------ ###
+1. Cell normalization ---------------------------------------------
+Measured data normalized based on  LogNormalize  method.
+
+2. Feature selection ---------------------------------------------
+# 2.1 Seurat identified variable features --------------------------
+Most variable genes (identified with vst method) will be taken into account for downstream analyses.
+Here are the top 10 most variable genes:
+ HSPA1A IGHV3-74 IGKV3-20 IGHV3-20 LYZ C1QA C1QB CCL4L2 CXCL13 HSPA6 HBB S100A9 APOC1 HSPA1B MT1G FABP4 C1QC S100A8 IGKV1-39 MARCO APOE FN1 IL22 IFI30 TRBV7-2 
+# 2.2 Filtering out first variable features picked -----------------
+# 2.3 Cummulative variance analysis --------------------------------
+# 2.4 Set of final variable features -------------------------------
+Analysis for both kinds of variance, raw and standardized.
+Notice that high levels out of the total variance are reached almost immediately for raw variance.
+# ---------------------- RawVariance 
+Here are the amounts of genes necessary to reach certain variance percentages.
+
+Variance percent	Amount of genes:
+25 	 4 
+50 	 18 
+75 	 91 
+90 	 679 
+95 	 2304 
+
+# ---------------------- StandardizedVariance 
+Here are the amounts of genes necessary to reach certain variance percentages.
+
+Variance percent	Amount of genes:
+25 	 1707 
+50 	 4636 
+75 	 7661 
+90 	 9518 
+95 	 10152 
+
+
+
+# 2.5 Mean by variance analysis ------------------------------------
+Plot depicting the relation log10 expression mean by variance has been output. Cutoff is shown as well as the varibale features picked are marked.# 2.6 Final variable features picked -------------------------------
+From the variable features identified before that have passed the established cutoffs, only those asked will be used (total 2278 ).
+They've also been output to a file, along with the list of variable features thrown away because of the cutoff. You should chek them, too.
+
+3. Gene normalization ---------------------------------------------
+No cell cycle scoring to be regressed out.
+
+
+Normalization completed!
+
+### ------------------ Dimensionality reduction ------------------ ###
+Dimensionality reduction directory already exists.
+1. PCA ---------------------------------------------------
+PCA reports directory already exists.
+PC1 and PC2 loading and general info saved to PCA reports path.
+
+2. Picking PCs ------------------------------------------------
+Saving plots useful for PCs picking decision...
+DimHeatMap, Jack Straw and elbow plots saved! You should check them all in order to make a decision about how many PCs would be suitable for downstream analyses!
+
+For this running, 30 PCs will be considered for downstream analyses. If multiple values of number of PCs are required, downstream analyses will be run separately for all of them.
+
+3. Harmony -----------------------------------------------
+Tags to be considered for batch-effect removal:
+seq.batch.tag
+<<< ----------------------- Save processed object ------------------------ >>>
+Seurat objects already processed should and will be saved.
+Objects directory already exists.
+### -------------------------- PC value: 30 --------------------------- ###
+Dimensionality reduction for 30 PCs directory already exists.
+
+
+### -------------------------- Cells clustering -------------------------- ###
+### -------------------------------- and --------------------------------- ###
+### ------------------ Non-linear dimensional reduction ------------------ ###
+### ------------------------ Cells clustering ------------------------ ###
+Finding clusters...
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 637013
+Number of edges: 8545644
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.8932
+Number of communities: 391
+Elapsed time: 414 seconds
+All values provided were used.
+### ------------------ Non-linear dimensional reduction ------------------ ###
+Common plots directory has been created. Check warnings if any.
+1. UMAP --------------------------------------------------------------------
+Running UMAP...
+
+2. tSNE --------------------------------------------------------------------
+Running tSNE...
+
+tSNE will be skipped.
+
+
+### ------------------------ Clusters definition ------------------------- ###
+### -------------------------------- and --------------------------------- ###
+### ------------------------ Cluster-specific QC ------------------------- ###
+
+
+### ------------------------ Clusters definition ------------------------- ###
+
+
+# Markers definition -------------------------------------------------------->
+Markers file was provided so that the markers found there as lists will also be included in the analysis.
+Markers to assess:
+ CD4, CD3D, CD3E, CD3G, CD8A, CD8B, CD69, CD40LG, CXCR5, BCL6, FOXP3, IKZF2, GATA3, GZMB, ICOS, IFNG, IL10, IL21, IL2RA, IL4, IL5, ITGAE, PRF1, RORC, RUNX3, TBX21, TNFRSF18, IL32, AHR, B3GAT1, BTLA, CCL20, CCR4, CCR5, CCR6, CCR7, CD200, CD27, CD28, CDK1, CRTAM, CTLA4, CXCL13, CXCR3, CXCR6, ENTPD1, EOMES, FGFBP2, GNLY, ADGRG1, GZMA, GZMH, HAVCR2, HOPX, IFIT2, IFIT3, IFITM3, IL13, IL17A, IL17F, IL2, IL22, IL23R, IL27RA, IRF7, ISG15, ITGA1, JAK2, LAMP1, MKI67, MX1, NKG7, OAS2, PDCD1, PPARG, PRDM1, RORA, S1PR1, SELL, SOCS1, STAT1, TGFB1, TIGIT, TNF, TOP2A, TRIM21, ZBTB7B,  and ZEB2 
+
+
+
+# Markers visualization ----------------------------------------------------->
+Markers directory has been created. Check warnings if any.
+Marker will be depicted for each dimensionality reduction map.
+Working on that...
+
+
+
+# Cells proportions per cluster --------------------------------------------->
+Proportions per cluster directory has been created. Check warnings if any.
+Also, a barplot depicting the percentage of cells per cluster (according to each resolution value applied) will be output.
+
+
+# Markers expression distributions ------------------------------------------>
+Violin Plots directory has been created. Check warnings if any.
+Outputting marker expression distributions (violin plots)...
+Violin Plots for resolution 0.4 directory has been created. Check warnings if any.
+
+
+### ------------------------ Cluster-specific QC ------------------------- ###
+Analysis of the cluster-specific quality control.
+
+Cluster-specific QC path directory has been created. Check warnings if any.
+Next processes will be run for each set of clusters according to the different resolution values applied.
+### ----------------------- CS QC for resolution 0.4 ------------------------ ###
+SC-QC path for resolution0.4 directory has been created. Check warnings if any.
+# QC measures distributions ----------------------------------------------->
+Violin plots for number of genes, counts per cell and mitochondrial genes percentage saved for resolution 0.4 .
+
+# QC measures depicted on dim. reduction plots ---------------------------->
+Dimensionality reduction plots depicting QC measures output.
+Cluster-specific QC completed!
+
+<<< ----------------------- Save processed object ------------------------ >>>
+Object saved as an RDS file!
+
+### ------------------------ Defining populations ------------------------ ###
+These analyses will be saved to cell assignment directory nested to the project directory.
+Population definition directory has been created. Check warnings if any.
+The analysis for population definition for clusters available in this version are next:
+	Differential gene expression analyses.
+	Ciro' original significance plots.
+This will be applied over the clusters defined by the different resolutions values.
+
+# 1. DGEA and significance plots ---------------------------------------------
+Significance plots directory has been created. Check warnings if any.
+Differential Gene Expression Analysis directory has been created. Check warnings if any.
+The script will attempt to run this part of the job in a parallel way...
+
+Process for resolution 0.4 
+Markers (DEGs) for each cluster have been identified.
+All DEGs saved to a xsv file as well as a Heatmap depicting the top 10 of them will be output.
+# Differential gene expression analysis --------------------------------------
+DGEA path for clusters set with resolution 0.4 directory has been created. Check warnings if any.
+No DGEA for resolution 0.4 
+
+# Ciro's significance plot ---------------------------------------------------
+Significance plot output for resolution 0.4 
+
+Population definition analyses processed!
+
+
+# 2. Populations tree --------------------------------------------------------
+Populations tree directory has been created. Check warnings if any.
+
+
+############    ---------   Populations tree    ---------    ############
+Job completed!
+Check for errors if any.
+
+         ----- Job Summary Statistics -----
+                    Queue: default                  
+                   Job ID: 5548449.herman.hpc.lji.org
+                 Job Name: Seurat_Analysis_R24_Cancer_Batches-1-to-20_CD8_Normal-lung
+                Node name: compute-0-11.hpc.lji.org 
+Job duration on this node: 27:43:38                 
+          Node Multiplier: .467                     
+      Normalized walltime: 12:56:55                 
+
+Job Requested resources:
+    nodes=1:ppn=8,mem=550gb,walltime=200:00:00,neednodes=1:ppn=8
+Used resources (as reported by Torque):
+    cput=28:16:27,vmem=509616016kb,walltime=12:56:54,mem=144467332kb,energy_used=0
+
+
+Additional Statistics (cgroup stats):
+
+CPU core numbers on node assigned for usage: 0-47
+CPU work distribution:
+CPU Core #0: 7.36%
+CPU Core #1: 0.18%
+CPU Core #2: 2.88%
+CPU Core #3: 4.58%
+CPU Core #4: 3.66%
+CPU Core #5: 9.66%
+CPU Core #6: 2.74%
+CPU Core #7: 8.73%
+CPU Core #8: 3.94%
+CPU Core #9: 5.51%
+CPU Core #10: 2.88%
+CPU Core #11: 3.81%
+CPU Core #12: 10.65%
+CPU Core #13: 2.97%
+CPU Core #14: 4.54%
+CPU Core #15: 1.55%
+CPU Core #16: 4.07%
+CPU Core #17: 1.46%
+CPU Core #18: 3.24%
+CPU Core #19: 0.94%
+CPU Core #20: 0.76%
+CPU Core #21: 2.09%
+CPU Core #22: 0.56%
+CPU Core #23: 0.64%
+CPU Core #24: 0.06%
+CPU Core #25: 1.19%
+CPU Core #26: 0.03%
+CPU Core #27: 0.04%
+CPU Core #28: 0.17%
+CPU Core #29: 0.19%
+CPU Core #30: 0.03%
+CPU Core #31: 0.03%
+CPU Core #32: 0.04%
+CPU Core #33: 0.14%
+CPU Core #34: 0.30%
+CPU Core #35: 0.10%
+CPU Core #36: 1.00%
+CPU Core #37: 0.31%
+CPU Core #38: 0.64%
+CPU Core #39: 0.57%
+CPU Core #40: 0.52%
+CPU Core #41: 0.10%
+CPU Core #42: 3.78%
+CPU Core #43: 0.16%
+CPU Core #44: 0.22%
+CPU Core #45: 0.05%
+CPU Core #46: 0.34%
+CPU Core #47: 0.38%
+
+Memory requested: 563200 MB
+Memory used:      152770 MB
+Swap used:        0 MB
+
+Number times max memory limit reached or attempted to exceed: 0
+
+Max Memory Used / Memory Requested: 27.1254%
+

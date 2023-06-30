@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count    min threads    max threads
+-------  -------  -------------  -------------
+all            1              1              1
+round_1        1              4              4
+total          2              1              4
+
+Select jobs to execute...
+
+[Thu Jun 29 00:42:23 2023]
+rule round_1:
+    input: /mnt/hpcscratch/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix, /mnt/hpcscratch/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/aggr_table.csv, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/donor_meta.csv, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/subset_crit.csv, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/markers_file.RSD
+    output: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-1/seurat_objects/SeuratObjectForPrjCD4_Round-1_WithArgs_NoPCs_30.RDS
+    log: logs/seurat_analysis/CD4_Round-1.log
+    jobid: 1
+    reason: Missing output files: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-1/seurat_objects/SeuratObjectForPrjCD4_Round-1_WithArgs_NoPCs_30.RDS
+    threads: 4
+    resources: tmpdir=/scratch, mem_mb=409600, mem_mib=390625, runtime=9000
+
+[Thu Jun 29 00:42:23 2023]
+Error in rule round_1:
+    jobid: 1
+    input: /mnt/hpcscratch/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix, /mnt/hpcscratch/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/aggr_table.csv, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/donor_meta.csv, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/subset_crit.csv, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/markers_file.RSD
+    output: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-1/seurat_objects/SeuratObjectForPrjCD4_Round-1_WithArgs_NoPCs_30.RDS
+    log: logs/seurat_analysis/CD4_Round-1.log (check log file(s) for error details)
+    shell:
+        module load R/3.6.1
+Rscript /home/vfajardo/shared_code/Seurat-based_scRNA-seq_Analysis_v2.3/R/master/general_seurat_analysis.2.3.R --ReportsPath /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-1 --PrjName CD4_Round-1 --DataFile /mnt/hpcscratch/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix --Raw10x /mnt/hpcscratch/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix --InputType matrix --FeatureID ensembl --DoAnnotate TRUE --AggrTable /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/aggr_table.csv --DonorsMetaData /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/donor_meta.csv --MergeBy donor.tag --LaneID 'species.tag;cell.type.tag;donors.sort.batch.tag;donors.no.tag;tissue.tag' --MultAnnPerLane TRUE --ChromBatchID chrom.batch.tag --SeqBatchID seq.batch.tag --HTOID hashtag.tag --OverlayID donor.tag  --DoSubset TRUE --TagsCriteria /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/subset_crit.csv --minCounts 1500 --maxCounts 20000 --minFeatures 800 --maxFeatures 4400 --maxMP 1500 --FeatsForDSA 30 --PCs 30 --ForHarmony seq.batch.tag --Resolution 'c(0.1, 0.4)' --MeanCutoff 0.01 --PropCutoff 0.001 --VarsToRegress 'c("nCount_RNA", "percent.mt")'  --FilterOut TRUE --MarkersFile /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/markers_file.RSD --DimReduction umap --RAM 400 2> logs/seurat_analysis/CD4_Round-1.log
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-06-29T004221.907547.snakemake.log

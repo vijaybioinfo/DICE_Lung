@@ -1,0 +1,24 @@
+Sample_ID,plate.id,index
+AnKu14_Hu_Ctrl_CD4P_5D_TCR,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G10
+AnKu14_Hu_Ctrl_CD8P_5D_TCR,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G11
+AnKu14_Hu_CoV_CD4P_5D_TCR,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G12
+AnKu14_Hu_CoV_CD8P_5D_TCR,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-H1
+AnKu14_Hu_Flu_CD4P_5D_TCR,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-H2
+AnKu14_Hu_Ctrl_CD4P_5D_Gex,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G4
+AnKu14_Hu_Ctrl_CD8P_5D_Gex,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G5
+AnKu14_Hu_CoV_CD4P_5D_Gex,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G6
+AnKu14_Hu_CoV_CD8P_5D_Gex,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G7
+AnKu14_Hu_Flu_CD4P_5D_Gex,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G8
+AnKu14_Hu_Flu_CD8P_5D_TCR,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-H3
+AnKu13_Hu_HN3_CD4PCD8P_5D_CITE,"PN-1000250: Dual Index Kit TN, Set A",SI-TN-G11
+AnKu13_Hu_HN3_CD4PCD8P_5D_Gex,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G2
+AnKu13_Hu_HN3_CD4PCD8P_5D_TCR,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G3
+AnKu14_Hu_Ctrl_CD4P_5D_CITE,"PN-1000250: Dual Index Kit TN, Set A",SI-TN-G12
+AnKu14_Hu_Ctrl_CD8P_5D_CITE,"PN-1000250: Dual Index Kit TN, Set A",SI-TN-H1
+AnKu14_Hu_CoV_CD4P_5D_CITE,"PN-1000250: Dual Index Kit TN, Set A",SI-TN-H2
+AnKu14_Hu_CoV_CD8P_5D_CITE,"PN-1000250: Dual Index Kit TN, Set A",SI-TN-H3
+AnKu14_Hu_Flu_CD4P_5D_CITE,"PN-1000250: Dual Index Kit TN, Set A",SI-TN-H4
+AnKu14_Hu_Flu_CD8P_5D_CITE,"PN-1000250: Dual Index Kit TN, Set A",SI-TN-H5
+AnKu14_Hu_Flu_CD8P_5D_Gex,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G9
+R24W_Hu_3_NKB_10D_Gex,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G10
+R24W_Hu_4_MYE_10D_Gex,"PN-1000215: Dual Index Kit TT, Set A",SI-TT-G11

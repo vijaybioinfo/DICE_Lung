@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count    min threads    max threads
+-------  -------  -------------  -------------
+all            1              1              1
+round_1        1              4              4
+total          2              1              4
+
+Select jobs to execute...
+
+[Thu Jun 29 00:31:31 2023]
+rule round_1:
+    input: /mnt/hpcscratch/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix, /mnt/hpcscratch/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/aggr_table.csv, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/donor_meta.csv, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/subset_crit.csv, /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/data/markers_file.RSD
+    output: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-1/seurat_objects/SeuratObjectForPrjCD4_Round-1_WithArgs_NoPCs_30.RDS
+    log: logs/seurat_analysis/CD4_Round-1.log
+    jobid: 1
+    reason: Missing output files: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-1/seurat_objects/SeuratObjectForPrjCD4_Round-1_WithArgs_NoPCs_30.RDS
+    threads: 4
+    resources: tmpdir=/scratch, mem_mb=409600, mem_mib=390625, runtime=9000
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule round_1 in file /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/Snakefile, line 17:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-1/seurat_objects/SeuratObjectForPrjCD4_Round-1_WithArgs_NoPCs_30.RDS
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-06-29T003130.198539.snakemake.log
