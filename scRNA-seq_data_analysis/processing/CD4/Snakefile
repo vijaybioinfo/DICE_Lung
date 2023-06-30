@@ -4,12 +4,6 @@ import os
 
 configfile: 'config.yaml'
 
-def get_mem_mb(wildcards, round_id):
-    return config['{0}_mem'.format(round_id)]*1024
-
-def get_run_time(wildcards, round_id):
-    return config['{0}_time'.format(round_id)]*60
-
 rule all:
     input:
         '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), config['param']['last_round_id'], config['param']['last_round_pc_no'])
@@ -36,8 +30,6 @@ rule round_1:
         hvf_percent=config['param']['round_1_hvf_percent'],
         pc_no=config['param']['round_1_pc_no'],
         mem_gb=config['param']['round_1_mem']
-    log:
-        "logs/seurat_analysis/{0}.log".format('CD4_Round-1')
     threads: 4
     resources:
         mem_mb=config['param']['round_1_mem']*1024,
@@ -55,4 +47,4 @@ rule round_1:
         "--FeatsForDSA {params.hvf_percent} --PCs {params.pc_no} --ForHarmony 'c(\"seq.batch.tag\")' "
         "--Resolution 'c(0.1, 0.4)' --MeanCutoff 0.01 --PropCutoff 0.001 "
         "--VarsToRegress 'c(\"nCount_RNA\", \"percent.mt\")'  --FilterOut TRUE "
-        "--MarkersFile {input.markers_file} --DimReduction 'c(\"umap\")' --RAM {params.mem_gb} 2> {log}"
+        "--MarkersFile {input.markers_file} --DimReduction 'c(\"umap\")' --RAM {params.mem_gb}"

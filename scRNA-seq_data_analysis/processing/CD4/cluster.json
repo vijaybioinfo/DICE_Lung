@@ -1,26 +1,18 @@
 {
-    "__default__" :
+    "__default__":
     {
-        "walltime" : "walltime=04:00:00",
-        "cores" : "nodes=1:ppn=1",
-        "memory" : "mem=20GB"
+        "walltime": "02:00:00",
+        "cores": "nodes=1:ppn=1",
+        "memory": "30g",
+        "output": "logs/{rule}.{jobid}.{wildcards}.out",
+        "error": "logs/{rule}.{jobid}.{wildcards}.err"
     },
-    "init_object":
+    "round_1":
     {
-        "walltime" : "walltime=12:00:00",
-        "cores" : "nodes=1:ppn=2",
-        "memory" : "mem=40GB"
-    },
-    "components":
-    {
-        "walltime" : "walltime=08:00:00",
-        "cores" : "nodes=1:ppn=2",
-        "memory" : "mem=40GB"
-    },
-    "markers":
-    {
-        "walltime" : "walltime=08:00:00",
-        "cores" : "nodes=1:ppn=2",
-        "memory" : "mem=40GB"
+      "walltime": "150:00:00",
+      "cores": "nodes=1:ppn=4",
+      "memory": "400g",
+      "output": "logs/seurat_analysis/{rule}.out.txt",
+      "error": "logs/seurat_analysis/{rule}.out.txt"
     }
 }

@@ -14,8 +14,6 @@
         'max_feats': 4400,
         'max_mp': 10,
         'round_1_hvf_percent': 30,
-        'round_1_pc_no': 30,
-        'round_1_mem': 400,
-        'round_1_time': 150
+        'round_1_pc_no': 30
     }
 }
