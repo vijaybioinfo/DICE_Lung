@@ -30,7 +30,7 @@ This section comprises the following major steps:
 - Clustering and dimensionality reduction.
 - Population definition
 - Sex-biased transcript calling
-- 
+
 The first step is described in the methods section of our manuscript in detail. Here we provide the code for the rest of the steps.
 
 ---
@@ -46,9 +46,9 @@ Cristian to define
 ---
 # Overlap and colocalization analyses
 
-Job to define..
+Job to define.
 
 ---
 # GARFIELD
 
-Eli and Job to define.
+Eli to define.
