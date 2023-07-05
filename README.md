@@ -53,8 +53,8 @@ The process of GWAS retrieval supposed two main stages:
 
 The main script for this step is called `preProcess_GWAS.py`, receiving as input the metadata table for a specific disease listing all its GWAS datasets and giving as output two files:
 
-- Raw file: raw download from source database
-- Pre-processed file: standardized file with relevant columns for further analysis
+- *Raw file*: raw download from source database
+- *Pre-processed file*: standardized file with relevant columns for further analysis
 
 ```bash
 python3 preProcess_GWAS.py --disease [name_of_disease(comma separated)]
