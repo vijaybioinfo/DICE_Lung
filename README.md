@@ -4,11 +4,12 @@ DICE Lung
 Repo for our manuscript presenting the DICE tissue project. Check out our manuscript:
 - [*Single-cell eQTL analysis of activated T cell subsets reveals activation and cell type–dependent effects of disease-risk variants*](https://www.science.org/doi/10.1126/sciimmunol.abm2508#) (PLACEHOLDER; TO BE REPLACED)
 
-We have splitted the process in six main sections:
+We have splitted the process in seven main sections:
 - Variant calling (based on WGS data)
 - scRNA-seq data analysis
 - scATAC-seq data analysis
 - eQTL mapping
+- GWAS retrieval
 - Overlap and colocalization analyses
 - GARFIELD
 
