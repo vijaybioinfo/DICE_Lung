@@ -1,0 +1,67 @@
+{
+    "total_runtime": 39077.3352329731,
+    "rules": {
+        "round_1": {
+            "mean-runtime": 16859.57541012764,
+            "min-runtime": 16859.57541012764,
+            "max-runtime": 16859.57541012764
+        },
+        "round_2": {
+            "mean-runtime": 11888.032564401627,
+            "min-runtime": 11888.032564401627,
+            "max-runtime": 11888.032564401627
+        },
+        "round_3": {
+            "mean-runtime": 10329.721786737442,
+            "min-runtime": 10329.721786737442,
+            "max-runtime": 10329.721786737442
+        }
+    },
+    "files": {
+        "/mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/Myeloid/Myeloid_Round-1/output/seurat_objects/SeuratObjectForPrjMyeloid_Round-1_WithArgs_NoPCs_30.RDS": {
+            "start-time": "Tue Jul  4 19:57:17 2023",
+            "stop-time": "Wed Jul  5 00:38:16 2023",
+            "duration": 16859.57541012764,
+            "priority": 0,
+            "resources": {
+                "_cores": 4,
+                "_nodes": 1,
+                "mem_mb": 1000,
+                "mem_mib": 954,
+                "disk_mb": 1000,
+                "disk_mib": 954,
+                "tmpdir": "<TBD>"
+            }
+        },
+        "/mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/Myeloid/Myeloid_Round-2/output/seurat_objects/SeuratObjectForPrjMyeloid_Round-2_WithArgs_NoPCs_30.RDS": {
+            "start-time": "Wed Jul  5 00:38:16 2023",
+            "stop-time": "Wed Jul  5 03:56:24 2023",
+            "duration": 11888.032564401627,
+            "priority": 0,
+            "resources": {
+                "_cores": 4,
+                "_nodes": 1,
+                "mem_mb": 5815,
+                "mem_mib": 5546,
+                "disk_mb": 5815,
+                "disk_mib": 5546,
+                "tmpdir": "<TBD>"
+            }
+        },
+        "/mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/Myeloid/Myeloid_Round-3/output/seurat_objects/SeuratObjectForPrjMyeloid_Round-3_WithArgs_NoPCs_30.RDS": {
+            "start-time": "Wed Jul  5 03:56:24 2023",
+            "stop-time": "Wed Jul  5 06:48:34 2023",
+            "duration": 10329.721786737442,
+            "priority": 0,
+            "resources": {
+                "_cores": 4,
+                "_nodes": 1,
+                "mem_mb": 5106,
+                "mem_mib": 4870,
+                "disk_mb": 5106,
+                "disk_mib": 4870,
+                "tmpdir": "<TBD>"
+            }
+        }
+    }
+}

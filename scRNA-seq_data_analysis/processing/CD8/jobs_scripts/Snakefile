@@ -1,4 +1,4 @@
-# ----> File to perform the scRNA-seq data analysis for the CD4 dataset of the DICE lung project
+# ----> File to perform the scRNA-seq data analysis for the CD8 dataset of the DICE lung project
 
 import os
 
@@ -17,11 +17,11 @@ rule round_1:
         subset_crit='{0}/data/subset_crit.csv'.format(os.getcwd()),
         markers_file='{0}/data/markers_file.RData'.format(os.getcwd())
     output:
-        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'CD4_Round-1', config['param']['round_1_pc_no'])
+        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'CD8_Round-1', config['param']['round_1_pc_no'])
     params:
-        round_id='CD4_Round-1',
+        round_id='CD8_Round-1',
         seurat_script=config['app']['seurat_script'],
-        reports_path='{0}/{1}/output'.format(os.getcwd(), 'CD4_Round-1'),
+        reports_path='{0}/{1}/output'.format(os.getcwd(), 'CD8_Round-1'),
         min_counts=config['param']['min_counts'],
         max_counts=config['param']['max_counts'],
         min_feats=config['param']['min_feats'],
@@ -48,7 +48,7 @@ rule round_1:
 
 rule round_2:
     input:
-        data_file='{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'CD4_Round-1', config['param']['round_1_pc_no']),
+        data_file='{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'CD8_Round-1', config['param']['round_1_pc_no']),
         cr_ref=config['file']['cr_ref'],
         aggr_table='{0}/data/aggr_table.csv'.format(os.getcwd()),
         donors_meta='{0}/data/donor_meta.csv'.format(os.getcwd()),
@@ -56,11 +56,11 @@ rule round_2:
         presubset_crit='{0}/data/presubset_crit_1.csv'.format(os.getcwd()),
         markers_file='{0}/data/markers_file.RData'.format(os.getcwd())
     output:
-        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'CD4_Round-2', config['param']['round_2_pc_no'])
+        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'CD8_Round-2', config['param']['round_2_pc_no'])
     params:
-        round_id='CD4_Round-2',
+        round_id='CD8_Round-2',
         seurat_script=config['app']['seurat_script'],
-        reports_path='{0}/{1}/output'.format(os.getcwd(), 'CD4_Round-2'),
+        reports_path='{0}/{1}/output'.format(os.getcwd(), 'CD8_Round-2'),
         min_counts=config['param']['min_counts'],
         max_counts=config['param']['max_counts'],
         min_feats=config['param']['min_feats'],

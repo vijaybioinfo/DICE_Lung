@@ -1,0 +1,108 @@
+############    --------   scRNA-seq ANALYSIS    --------    ############
+############    ------------   USING SEURAT   -----------    ############
+By Vicente Fajardo
+
+
+
+### --------------------------- Libraries --------------------------- ###
+Importing libraries...
+
+Libraries imported!
+
+
+
+### ------------------------ Parallelisation ------------------------ ###
+
+
+### --------------------------- Arguments --------------------------- ###
+General reports path: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/B/B_Round-3/output 
+Abolute path to count matrix file: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/B/B_Round-1/output/seurat_objects/SeuratObjectForPrjB_Round-1_WithArgs_NoPCs_30.RDS 
+Project name: B_Round-3 
+Filtering arguments:
+Minimum and maximum thresholds for counts number per cell: 0 and 6000 
+Minimum and maximum thresholds for genes number per cell: 200 and 2000 
+Maximum mitochondrial genes percentage per cell: 0 
+Normalization method: LogNormalize 
+Variable features selection method: vst 
+Number/Percentage of most variable genes to be considered 25 
+Resolution value(s) for clustering analysis: 0.1, 0.3 
+Values of PCs to be taken into account for dimensionality reduction: 30 
+Should pairwise comparisons among clusters (DEA) be applied? FALSE 
+
+
+
+### ------------------------- Data Loading ------------------------- ###
+Subsetting seurat object...
+Seurat object succesfully subsetted!
+Seurat object has been loaded and cleaned!
+
+Annotations for seurat object cells have been loaded!
+
+Subset criteria loaded...
+
+
+
+### ------------------------- Annotations -------------------------- ###
+Seurat object has got annotations.
+
+
+### ------------------------ Tags Filtering ------------------------ ###
+Subsetting seurat object according to the criteria supplied...
+Seurat object subsetted!
+
+
+### --------------------- Quality control (QC) --------------------- ###
+Quality Control directory has been created. Check warnings if any.
+General QC assessment previous to filtering applied.
+
+Cell filtering applied using
+	cell counts threshold: 0 and 6000 
+	gene thresholds: 200 and 2000 
+	Maximum mitochondrial gene percentage per cell: 0 
+
+General QC assessment after filtering applied.
+
+[[1]]
+NULL
+
+### -------------------- Feature selection and ------------------- ###
+### ----------------------- Normalization ------------------------ ###
+Feature selection directory has been created. Check warnings if any.
+
+### ------------------------ LogTransform ------------------------ ###
+1. Cell normalization ---------------------------------------------
+Measured data normalized based on  LogNormalize  method.
+
+2. Feature selection ---------------------------------------------
+# 2.1 Seurat identified variable features --------------------------
+Most variable genes (identified with vst method) will be taken into account for downstream analyses.
+Here are the top 10 most variable genes:
+ FOSB KLF6 NEAT1 EZR YBX3 ZFP36L2 FCRL1 ZNF331 FOS FOXP1 POU2F1 BEND4 RAPGEF2 HOOK3 AHNAK LRRFIP1 SYNE1 USP6NL IL16 TUG1 SYNE2 TTN VPS37B CD44 IDS 
+# 2.2 Filtering out first variable features picked -----------------
+# 2.3 Cummulative variance analysis --------------------------------
+# 2.4 Set of final variable features -------------------------------
+Analysis for both kinds of variance, raw and standardized.
+Notice that high levels out of the total variance are reached almost immediately for raw variance.
+# ---------------------- RawVariance 
+Here are the amounts of genes necessary to reach certain variance percentages.
+
+Variance percent	Amount of genes:
+25 	 1 
+50 	 1 
+75 	 278 
+90 	 1868 
+95 	 3298 
+
+# ---------------------- StandardizedVariance 
+Here are the amounts of genes necessary to reach certain variance percentages.
+
+Variance percent	Amount of genes:
+25 	 NA 
+50 	 NA 
+75 	 NA 
+90 	 NA 
+95 	 NA 
+
+
+
+# 2.5 Mean by variance analysis ------------------------------------

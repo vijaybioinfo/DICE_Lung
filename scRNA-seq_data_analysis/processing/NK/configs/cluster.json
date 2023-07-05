@@ -1,0 +1,38 @@
+{
+    "__default__":
+    {
+        "walltime": "02:00:00",
+        "cores": "1",
+        "memory": "30g"
+    },
+    "round_1":
+    {
+      "walltime": "150:00:00",
+      "cores": "4",
+      "memory": "250g"
+    },
+    "round_2":
+    {
+      "walltime": "100:00:00",
+      "cores": "4",
+      "memory": "250g"
+    },
+    "round_3":
+    {
+      "walltime": "100:00:00",
+      "cores": "4",
+      "memory": "130g"
+    },
+    "round_4":
+    {
+      "walltime": "100:00:00",
+      "cores": "4",
+      "memory": "130g"
+    },
+    "round_5":
+    {
+      "walltime": "100:00:00",
+      "cores": "4",
+      "memory": "130g"
+    }
+}

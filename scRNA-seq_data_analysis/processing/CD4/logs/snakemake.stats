@@ -1,0 +1,47 @@
+{
+    "total_runtime": 44673.41145825386,
+    "rules": {
+        "round_1": {
+            "mean-runtime": 26762.877855539322,
+            "min-runtime": 26762.877855539322,
+            "max-runtime": 26762.877855539322
+        },
+        "round_2": {
+            "mean-runtime": 17910.53037595749,
+            "min-runtime": 17910.53037595749,
+            "max-runtime": 17910.53037595749
+        }
+    },
+    "files": {
+        "/mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-1/output/seurat_objects/SeuratObjectForPrjCD4_Round-1_WithArgs_NoPCs_30.RDS": {
+            "start-time": "Tue Jul  4 18:35:53 2023",
+            "stop-time": "Wed Jul  5 02:01:56 2023",
+            "duration": 26762.877855539322,
+            "priority": 0,
+            "resources": {
+                "_cores": 4,
+                "_nodes": 1,
+                "mem_mb": 1000,
+                "mem_mib": 954,
+                "disk_mb": 1000,
+                "disk_mib": 954,
+                "tmpdir": "<TBD>"
+            }
+        },
+        "/mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD4/CD4_Round-2/output/seurat_objects/SeuratObjectForPrjCD4_Round-2_WithArgs_NoPCs_30.RDS": {
+            "start-time": "Wed Jul  5 02:01:56 2023",
+            "stop-time": "Wed Jul  5 07:00:26 2023",
+            "duration": 17910.53037595749,
+            "priority": 0,
+            "resources": {
+                "_cores": 4,
+                "_nodes": 1,
+                "mem_mb": 11022,
+                "mem_mib": 10512,
+                "disk_mb": 11022,
+                "disk_mib": 10512,
+                "tmpdir": "<TBD>"
+            }
+        }
+    }
+}

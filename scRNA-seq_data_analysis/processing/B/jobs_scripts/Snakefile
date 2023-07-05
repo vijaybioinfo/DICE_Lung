@@ -1,0 +1,169 @@
+# ----> File to perform the scRNA-seq data analysis for the B dataset of the DICE lung project
+
+import os
+
+configfile: 'config.yaml'
+
+rule all:
+    input:
+        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), config['param']['last_round_id'], config['param']['last_round_pc_no'])
+
+rule round_1:
+    input:
+        data_file=config['file']['cr_ref'],
+        cr_ref=config['file']['cr_ref'],
+        aggr_table='{0}/data/aggr_table.csv'.format(os.getcwd()),
+        donors_meta='{0}/data/donor_meta.csv'.format(os.getcwd()),
+        subset_crit='{0}/data/subset_crit.csv'.format(os.getcwd()),
+        markers_file='{0}/data/markers_file.RData'.format(os.getcwd())
+    output:
+        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'B_Round-1', config['param']['round_1_pc_no'])
+    params:
+        round_id='B_Round-1',
+        seurat_script=config['app']['seurat_script'],
+        reports_path='{0}/{1}/output'.format(os.getcwd(), 'B_Round-1'),
+        min_counts=config['param']['min_counts'],
+        max_counts=config['param']['max_counts'],
+        min_feats=config['param']['min_feats'],
+        max_feats=config['param']['max_feats'],
+        max_mp=config['param']['max_mp'],
+        hvf_percent=config['param']['round_1_hvf_percent'],
+        pc_no=config['param']['round_1_pc_no'],
+        mem_gb=config['param']['round_1_mem']
+    threads: 4
+    shell:
+        "module load R/3.6.1\n"
+        "Rscript {params.seurat_script} "
+        "--ReportsPath {params.reports_path} --PrjName {params.round_id} "
+        "--DataFile {input.data_file} --Raw10x {input.cr_ref} --InputType matrix --FeatureID ensembl --IsFivePrime TRUE "
+        "--DoAnnotate TRUE --AggrTable {input.aggr_table} --DonorsMetaData {input.donors_meta} "
+        "--MergeBy donor.tag --LaneID 'species.tag;cell.type.tag;donors.sort.batch.tag;donors.no.tag;tissue.tag' --MultAnnPerLane TRUE "
+        "--ChromBatchID chrom.batch.tag --SeqBatchID seq.batch.tag --HTOID hashtag.tag --OverlayID donor.tag  "
+        "--DoSubset TRUE --TagsCriteria {input.subset_crit} "
+        "--minCounts {params.min_counts} --maxCounts {params.max_counts} --minFeatures {params.min_feats} --maxFeatures {params.max_feats} --maxMP {params.min_counts} "
+        "--FeatsForDSA {params.hvf_percent} --PCs {params.pc_no} --ForHarmony 'c(\"seq.batch.tag\")' "
+        "--Resolution 'c(0.1, 0.2, 0.3, 0.4)' --MeanCutoff 0.01 --PropCutoff 0.001 "
+        "--VarsToRegress 'c(\"nCount_RNA\", \"percent.mt\")'  --FilterOut FALSE "
+        "--MarkersFile {input.markers_file} --DimReduction 'c(\"umap\")' --RAM {params.mem_gb}"
+
+# NOTE: For this cell type, the second round was applied only as a pilot separate analyses for B and NK cells. Then, from this analysis, the barcodes that represent B cells and the barcodes that represent NK cells were determined by examining the identity of the clusters. That is, the output from this analysis was a set of barcodes for B cells and a set of barcodes for NK cells. We skip this step in this Snakemake and instead provide the barcodes files for either cell type.
+# NOTE: If requested by someone, I can provide the code by adding it to the workflow.
+# rule round_2:
+#     input:
+#         data_file='{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'B_Round-1', config['param']['round_1_pc_no']),
+#         cr_ref=config['file']['cr_ref'],
+#         aggr_table='{0}/data/aggr_table.csv'.format(os.getcwd()),
+#         donors_meta='{0}/data/donor_meta.csv'.format(os.getcwd()),
+#         subset_crit='{0}/data/subset_crit.csv'.format(os.getcwd()),
+#         presubset_crit='{0}/data/presubset_crit_1.csv'.format(os.getcwd()),
+#         markers_file='{0}/data/markers_file.RData'.format(os.getcwd())
+#     output:
+#         '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'B_Round-2', config['param']['round_2_pc_no'])
+#     params:
+#         round_id='B_Round-2',
+#         seurat_script=config['app']['seurat_script'],
+#         reports_path='{0}/{1}/output'.format(os.getcwd(), 'B_Round-2'),
+#         min_counts=config['param']['min_counts'],
+#         max_counts=config['param']['max_counts'],
+#         min_feats=config['param']['min_feats'],
+#         max_feats=config['param']['max_feats'],
+#         max_mp=config['param']['max_mp'],
+#         hvf_percent=config['param']['round_2_hvf_percent'],
+#         pc_no=config['param']['round_2_pc_no'],
+#         mem_gb=config['param']['round_2_mem']
+#     threads: 4
+#     shell:
+#         "module load R/3.6.1\n"
+#         "Rscript {params.seurat_script} "
+#         "--ReportsPath {params.reports_path} --PrjName {params.round_id} "
+#         "--DataFile {input.data_file} --Raw10x {input.cr_ref} --InputType seurat --FeatureID ensembl "
+#         "--DoPreSubset TRUE --PreSubsetCriteria {input.presubset_crit} "
+#         "--DoAnnotate TRUE --AggrTable {input.aggr_table} --DonorsMetaData {input.donors_meta} "
+#         "--MergeBy donor.tag --LaneID 'species.tag;cell.type.tag;donors.sort.batch.tag;donors.no.tag;tissue.tag' --MultAnnPerLane TRUE "
+#         "--ChromBatchID chrom.batch.tag --SeqBatchID seq.batch.tag --HTOID hashtag.tag --OverlayID donor.tag  "
+#         "--DoSubset TRUE --TagsCriteria {input.subset_crit} "
+#         "--minCounts {params.min_counts} --maxCounts {params.max_counts} --minFeatures {params.min_feats} --maxFeatures {params.max_feats} --maxMP {params.min_counts} "
+#         "--FeatsForDSA {params.hvf_percent} --PCs {params.pc_no} --ForHarmony 'c(\"seq.batch.tag\")' "
+#         "--Resolution 'c(0.2, 0.3)' --MeanCutoff 0.01 --PropCutoff 0.001 "
+#         "--VarsToRegress 'c(\"nCount_RNA\", \"percent.mt\")'  --FilterOut FALSE "
+#         "--MarkersFile {input.markers_file} --DimReduction 'c(\"umap\")' --RAM {params.mem_gb}"
+
+rule round_3:
+    input:
+        data_file='{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'B_Round-1', config['param']['round_1_pc_no']),
+        cr_ref=config['file']['cr_ref'],
+        aggr_table='{0}/data/aggr_table.csv'.format(os.getcwd()),
+        donors_meta='{0}/data/donor_meta.csv'.format(os.getcwd()),
+        subset_crit='{0}/data/subset_crit.csv'.format(os.getcwd()),
+        presubset_crit='{0}/data/presubset_crit_2.csv'.format(os.getcwd()),
+        markers_file='{0}/data/markers_file.RData'.format(os.getcwd())
+    output:
+        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'B_Round-3', config['param']['round_3_pc_no'])
+    params:
+        round_id='B_Round-3',
+        seurat_script=config['app']['seurat_script'],
+        reports_path='{0}/{1}/output'.format(os.getcwd(), 'B_Round-3'),
+        min_counts=config['param']['min_counts'],
+        max_counts=config['param']['max_counts'],
+        min_feats=config['param']['min_feats'],
+        max_feats=config['param']['max_feats'],
+        max_mp=config['param']['max_mp'],
+        hvf_percent=config['param']['round_3_hvf_percent'],
+        pc_no=config['param']['round_3_pc_no'],
+        mem_gb=config['param']['round_3_mem']
+    threads: 4
+    shell:
+        "module load R/3.6.1\n"
+        "Rscript {params.seurat_script} "
+        "--ReportsPath {params.reports_path} --PrjName {params.round_id} "
+        "--DataFile {input.data_file} --Raw10x {input.cr_ref} --InputType seurat --FeatureID ensembl "
+        "--DoPreSubset TRUE --PreSubsetCriteria {input.presubset_crit} "
+        "--DoAnnotate TRUE --AggrTable {input.aggr_table} --DonorsMetaData {input.donors_meta} "
+        "--MergeBy donor.tag --LaneID 'species.tag;cell.type.tag;donors.sort.batch.tag;donors.no.tag;tissue.tag' --MultAnnPerLane TRUE "
+        "--ChromBatchID chrom.batch.tag --SeqBatchID seq.batch.tag --HTOID hashtag.tag --OverlayID donor.tag  "
+        "--DoSubset TRUE --TagsCriteria {input.subset_crit} "
+        "--minCounts {params.min_counts} --maxCounts {params.max_counts} --minFeatures {params.min_feats} --maxFeatures {params.max_feats} --maxMP {params.min_counts} "
+        "--FeatsForDSA {params.hvf_percent} --PCs {params.pc_no} --ForHarmony 'c(\"seq.batch.tag\")' "
+        "--Resolution 'c(0.1, 0.3)' --MeanCutoff 0.01 --PropCutoff 0.001 "
+        "--VarsToRegress 'c(\"nCount_RNA\", \"percent.mt\")'  --FilterOut TRUE "
+        "--MarkersFile {input.markers_file} --DimReduction 'c(\"umap\")' --RAM {params.mem_gb}"
+
+rule round_4:
+    input:
+        data_file='{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'B_Round-3', config['param']['round_3_pc_no']),
+        cr_ref=config['file']['cr_ref'],
+        aggr_table='{0}/data/aggr_table.csv'.format(os.getcwd()),
+        donors_meta='{0}/data/donor_meta.csv'.format(os.getcwd()),
+        subset_crit='{0}/data/subset_crit.csv'.format(os.getcwd()),
+        presubset_crit='{0}/data/presubset_crit_3.csv'.format(os.getcwd()),
+        markers_file='{0}/data/markers_file.RData'.format(os.getcwd())
+    output:
+        '{0}/{1}/output/seurat_objects/SeuratObjectForPrj{1}_WithArgs_NoPCs_{2}.RDS'.format(os.getcwd(), 'B_Round-4', config['param']['round_4_pc_no'])
+    params:
+        round_id='NK_Round-4',
+        seurat_script=config['app']['seurat_script'],
+        reports_path='{0}/{1}/output'.format(os.getcwd(), 'B_Round-4'),
+        min_counts=config['param']['min_counts'],
+        max_counts=config['param']['max_counts'],
+        min_feats=config['param']['min_feats'],
+        max_feats=config['param']['max_feats'],
+        max_mp=config['param']['max_mp'],
+        hvf_percent=config['param']['round_4_hvf_percent'],
+        pc_no=config['param']['round_4_pc_no'],
+        mem_gb=config['param']['round_4_mem']
+    threads: 4
+    shell:
+        "module load R/3.6.1\n"
+        "Rscript {params.seurat_script} "
+        "--ReportsPath {params.reports_path} --PrjName {params.round_id} "
+        "--DataFile {input.data_file} --Raw10x {input.cr_ref} --InputType seurat --FeatureID ensembl "
+        "--DoPreSubset TRUE --PreSubsetCriteria {input.presubset_crit} "
+        "--DoAnnotate TRUE --AggrTable {input.aggr_table} --DonorsMetaData {input.donors_meta} "
+        "--MergeBy donor.tag --LaneID 'species.tag;cell.type.tag;donors.sort.batch.tag;donors.no.tag;tissue.tag' --MultAnnPerLane TRUE "
+        "--ChromBatchID chrom.batch.tag --SeqBatchID seq.batch.tag --HTOID hashtag.tag --OverlayID donor.tag  "
+        "--DoSubset TRUE --TagsCriteria {input.subset_crit} "
+        "--minCounts {params.min_counts} --maxCounts {params.max_counts} --minFeatures {params.min_feats} --maxFeatures {params.max_feats} --maxMP {params.min_counts} "
+        "--FeatsForDSA {params.hvf_percent} --PCs {params.pc_no} --ForHarmony 'c(\"seq.batch.tag\")' "
+        "--Resolution 'c(0.1, 0.3)' --MeanCutoff 0.01 --PropCutoff 0.001 "
+        "--VarsToRegress 'c(\"nCount_RNA\", \"percent.mt\")'  --FilterOut TRUE "
+        "--MarkersFile {input.markers_file} --DimReduction 'c(\"umap\")' --RAM {params.mem_gb}"

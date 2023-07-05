@@ -8,13 +8,13 @@
     "round_1":
     {
       "walltime": "150:00:00",
-      "cores": "4",
-      "memory": "400g"
+      "cores": "2",
+      "memory": "450g"
     },
     "round_2":
     {
       "walltime": "100:00:00",
-      "cores": "4",
-      "memory": "350g"
+      "cores": "2",
+      "memory": "450g"
     }
 }

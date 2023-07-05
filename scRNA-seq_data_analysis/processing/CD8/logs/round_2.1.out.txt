@@ -1,0 +1,145 @@
+############    --------   scRNA-seq ANALYSIS    --------    ############
+############    ------------   USING SEURAT   -----------    ############
+By Vicente Fajardo
+
+
+
+### --------------------------- Libraries --------------------------- ###
+Importing libraries...
+
+Libraries imported!
+
+
+
+### ------------------------ Parallelisation ------------------------ ###
+
+
+### --------------------------- Arguments --------------------------- ###
+General reports path: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD8/CD8_Round-2/output 
+Abolute path to count matrix file: /mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/R24/paper_developments/R24_Cancer/github_repo/DICE_Lung/scRNA-seq_data_analysis/processing/CD8/CD8_Round-1/output/seurat_objects/SeuratObjectForPrjCD8_Round-1_WithArgs_NoPCs_30.RDS 
+Project name: CD8_Round-2 
+Filtering arguments:
+Minimum and maximum thresholds for counts number per cell: 1500 and 20000 
+Minimum and maximum thresholds for genes number per cell: 800 and 4400 
+Maximum mitochondrial genes percentage per cell: 1500 
+Normalization method: LogNormalize 
+Variable features selection method: vst 
+Number/Percentage of most variable genes to be considered 25 
+Resolution value(s) for clustering analysis: 0.2, 0.3 
+Values of PCs to be taken into account for dimensionality reduction: 30 
+Should pairwise comparisons among clusters (DEA) be applied? FALSE 
+
+
+
+### ------------------------- Data Loading ------------------------- ###
+Subsetting seurat object...
+Seurat object succesfully subsetted!
+Seurat object has been loaded and cleaned!
+
+Annotations for seurat object cells have been loaded!
+
+Subset criteria loaded...
+
+
+
+### ------------------------- Annotations -------------------------- ###
+Seurat object has got annotations.
+
+
+### ------------------------ Tags Filtering ------------------------ ###
+Subsetting seurat object according to the criteria supplied...
+Seurat object subsetted!
+
+
+### --------------------- Quality control (QC) --------------------- ###
+Quality Control directory has been created. Check warnings if any.
+General QC assessment previous to filtering applied.
+
+Cell filtering applied using
+	cell counts threshold: 1500 and 20000 
+	gene thresholds: 800 and 4400 
+	Maximum mitochondrial gene percentage per cell: 1500 
+
+General QC assessment after filtering applied.
+
+[[1]]
+NULL
+
+### -------------------- Feature selection and ------------------- ###
+### ----------------------- Normalization ------------------------ ###
+Feature selection directory has been created. Check warnings if any.
+
+### ------------------------ LogTransform ------------------------ ###
+1. Cell normalization ---------------------------------------------
+Measured data normalized based on  LogNormalize  method.
+
+2. Feature selection ---------------------------------------------
+# 2.1 Seurat identified variable features --------------------------
+Most variable genes (identified with vst method) will be taken into account for downstream analyses.
+Here are the top 10 most variable genes:
+ IGHV3-74 IGKV3-20 IGHV3-20 CCL4L2 HBB CXCL13 IGKV1-39 IL22 TRBV7-2 JCHAIN MT1G IGHV3-23 IGLV3-21 IGKV4-1 IL17A PTGDS IGHG1 TRBV12-3 TRBV11-2 TRBV10-3 TRBV7-3 TRBV3-1 TRBV4-1 SFTPC TRBV5-1 
+# 2.2 Filtering out first variable features picked -----------------
+# 2.3 Cummulative variance analysis --------------------------------
+# 2.4 Set of final variable features -------------------------------
+Analysis for both kinds of variance, raw and standardized.
+Notice that high levels out of the total variance are reached almost immediately for raw variance.
+# ---------------------- RawVariance 
+Here are the amounts of genes necessary to reach certain variance percentages.
+
+Variance percent	Amount of genes:
+25 	 3 
+50 	 16 
+75 	 86 
+90 	 689 
+95 	 2340 
+
+# ---------------------- StandardizedVariance 
+Here are the amounts of genes necessary to reach certain variance percentages.
+
+Variance percent	Amount of genes:
+25 	 1934 
+50 	 4783 
+75 	 7708 
+90 	 9498 
+95 	 10112 
+
+
+
+# 2.5 Mean by variance analysis ------------------------------------
+Plot depicting the relation log10 expression mean by variance has been output. Cutoff is shown as well as the varibale features picked are marked.# 2.6 Final variable features picked -------------------------------
+From the variable features identified before that have passed the established cutoffs, only those asked will be used (total 1932 ).
+They've also been output to a file, along with the list of variable features thrown away because of the cutoff. You should chek them, too.
+
+3. Gene normalization ---------------------------------------------
+No cell cycle scoring to be regressed out.
+
+
+Normalization completed!
+
+### ------------------ Dimensionality reduction ------------------ ###
+Dimensionality reduction directory has been created. Check warnings if any.
+1. PCA ---------------------------------------------------
+PCA reports directory has been created. Check warnings if any.
+PC1 and PC2 loading and general info saved to PCA reports path.
+
+2. Picking PCs ------------------------------------------------
+Saving plots useful for PCs picking decision...
+DimHeatMap, Jack Straw and elbow plots saved! You should check them all in order to make a decision about how many PCs would be suitable for downstream analyses!
+
+For this running, 30 PCs will be considered for downstream analyses. If multiple values of number of PCs are required, downstream analyses will be run separately for all of them.
+
+3. Harmony -----------------------------------------------
+Tags to be considered for batch-effect removal:
+seq.batch.tag
+<<< ----------------------- Save processed object ------------------------ >>>
+Seurat objects already processed should and will be saved.
+Objects directory already exists.
+### -------------------------- PC value: 30 --------------------------- ###
+Dimensionality reduction for 30 PCs directory has been created. Check warnings if any.
+
+
+### -------------------------- Cells clustering -------------------------- ###
+### -------------------------------- and --------------------------------- ###
+### ------------------ Non-linear dimensional reduction ------------------ ###
+### ------------------------ Cells clustering ------------------------ ###
+Finding clusters...

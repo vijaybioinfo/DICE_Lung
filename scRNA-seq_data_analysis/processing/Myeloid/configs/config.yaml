@@ -3,10 +3,10 @@
         'seurat_script': '/home/vfajardo/shared_code/Seurat-based_scRNA-seq_Analysis_v2.3/R/master/general_seurat_analysis.2.3.R'
     },
     'file': {
-        'cr_ref': '/mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_CD4_Normal-lung/outs/filtered_feature_bc_matrix'
+        'cr_ref': '/mnt/bioadhoc-temp/Groups/vd-vijay/vfajardo/sequencing_data/05-14-2022/aggr/R24_Cancer_Batches-1-to-20_Myeloid_Normal-lung/outs/filtered_feature_bc_matrix'
     },
     'param': {
-        'last_round_id': 'CD4_Round-2',
+        'last_round_id': 'Myeloid_Round-3',
         'last_round_pc_no': 30,
         'min_counts': 1500,
         'max_counts': 20000,
@@ -15,9 +15,12 @@
         'max_mp': 10,
         'round_1_hvf_percent': 30,
         'round_1_pc_no': 30,
-        'round_1_mem': 400,
-        'round_2_hvf_percent': 25,
+        'round_1_mem': 300,
+        'round_2_hvf_percent': 30,
         'round_2_pc_no': 30,
-        'round_2_mem': 350
+        'round_2_mem': 200,
+        'round_3_hvf_percent': 30,
+        'round_3_pc_no': 30,
+        'round_3_mem': 180
     }
 }
