@@ -44,6 +44,32 @@ Angel to define.
 Cristian to define
 
 ---
+# GWAS compilation
+
+The process of GWAS retrieval supposed two main stages:
+
+## Stage 1 : Downloading and pre-processing
+
+The main script for this step is called `preProcess_GWAS.py`, receiving as input the metadata table for a specific disease listing all its GWAS datasets and giving as output two files:
+
+- Raw file: raw download from source database
+- Pre-processed file: standardized file with relevant columns for further analysis
+
+```bash
+python3 preProcess_GWAS.py --disease [name_of_disease(comma separated)]
+```
+
+In addition, a QC script is included to double check GWAS integrity `QC_preProcess_GWAS.py`
+
+```bash
+python3 QC_preProcess_GWAS.py --disease [name_of_disease(comma separated)]
+```
+
+## Stage 2 : Standardization
+
+Job to define.
+
+---
 # Overlap and colocalization analyses
 
 Job to define.
