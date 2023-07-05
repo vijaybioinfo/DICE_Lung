@@ -47,20 +47,30 @@ Cristian to define
 ---
 # GWAS compilation
 
-The process of GWAS retrieval supposed two main stages:
+The process of GWAS retrieval is supposed two main stages:
 
 ## Stage 1 : Downloading and pre-processing
 
 The main script for this step is called `preProcess_GWAS.py`, receiving as input the metadata table for a specific disease listing all its GWAS datasets and giving as output two files:
 
-- *Raw file*: raw download from source database
-- *Pre-processed file*: standardized file with relevant columns for further analysis
+- *Raw file*: raw download from the source database.
+- *Pre-processed file*: standardized file with relevant columns for further analysis.
+
+The required fields from the sample table will be the following:
+
+- **`Sum stats`**: 0 or 1 for non-summary or summary statistics file correspondingly.
+- **`Source`**: Three possible values for this specific project. *Pan-UK Biobank*, *COVID-19 HGI*, or *NHGRI-EBI Catalog*.
+- **`Sample name`:** Personalized ID for GWAS study, will be used as a prefix in output files.
+- **`Genome version`:** Correspondent genome build.
+- **`Link`**: URL address for summary statistic files and local download path for non-summary statistic files.
+- **`Messy dataset:`** Flag column, 1 to jump specific datasets.
+- **`populations`**: Listing ancestry populations for each GWAS cohort.
 
 ```bash
 python3 preProcess_GWAS.py --disease [name_of_disease(comma separated)]
 ```
 
-In addition, a QC script is included to double check GWAS integrity `QC_preProcess_GWAS.py`
+In addition, a QC script is included to double-check GWAS integrity `QC_preProcess_GWAS.py`
 
 ```bash
 python3 QC_preProcess_GWAS.py --disease [name_of_disease(comma separated)]
