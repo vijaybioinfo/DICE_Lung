@@ -9,7 +9,7 @@ We have splitted the process in seven main sections:
 - scRNA-seq data analysis
 - scATAC-seq data analysis
 - eQTL mapping
-- GWAS retrieval
+- GWAS compilation
 - Overlap and colocalization analyses
 - GARFIELD
 
