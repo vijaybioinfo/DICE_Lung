@@ -1,0 +1,3 @@
+[submodule "WGS_genotyping"]
+	path = WGS_genotyping
+	url = https://github.com/cristian2420/WGS_genotyping.git
