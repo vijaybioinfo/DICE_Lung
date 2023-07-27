@@ -37,7 +37,8 @@ The first step is described in the methods section of our manuscript in detail. 
 ---
 # scATAC-seq data analysis
 
-Angel to define.
+- Preprocessing of raw data was done entirely with 10x's cellranger atac.
+- Clustering, dimensionalty reduction, population definition, pseudobulk aggregation and peak calling was done in R with ArchR package and custom scripts.
 
 ---
 # eQTL mapping
