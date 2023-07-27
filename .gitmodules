@@ -1,3 +1,6 @@
 [submodule "WGS_genotyping"]
 	path = WGS_genotyping
 	url = https://github.com/cristian2420/WGS_genotyping.git
+[submodule "scATAC-seq_data_analysis"]
+	path = scATAC-seq_data_analysis
+	url = git@github.com:caztle1304/DICE-Tissue_scATAC-seq.git
