@@ -39,7 +39,7 @@ parser.add_argument('--disease', type=str, required=True)
 args = parser.parse_args()
 diseases = [item for item in args.disease.split(',')]
 
-sourcePathGWAS = '/mnt/bioadhoc-temp/Groups/vd-vijay/emarquez/GWAS'
+sourcePathGWAS = '../GWAS'
 
 ## Values for CHRs
 rangeChr = [str(i) for i in list(range(1,25))]

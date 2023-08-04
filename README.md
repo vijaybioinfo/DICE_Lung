@@ -96,4 +96,19 @@ Job to define.
 ---
 # GARFIELD
 
-Eli to define.
+GARFIELD-v2.0 software was executed using the default parameters, following the [documentation](https://www.ebi.ac.uk/birney-srv/GARFIELD/documentation-v2/GARFIELD-v2.pdf) from *Valentina Iotchkova, Graham R.S. Ritchie, Matthias Geihs, Sandro Morganella, Josine L. Min, Klaudia Walter, Nicholas J. Timpson, UK10K Consortium, Ian Dunham, Ewan Birney and Nicole Soranzo. GARFIELD - GWAS Analysis of Regulatory or Functional Information Enrichment with LD correction. doi: https://doi.org/10.1101/085738*.
+
+After preparing the inputs, the following lines were executed for each study from each disease:
+```bash
+./garfield-prep-chr -ptags prunetags -ctags clumptags -maftss maftssd -pval pvalue -ann annot -o output -excl 895,975,976,977,978,979,980
+```
+```bash
+Rscript garfield-Meff-Padj.R -i prepfile -o outfile
+```
+```bash
+Rscript garfield-test.R -i prepfile -o outfile -l linkfile -pt pthreshs -b binning -c condition -s subset
+```
+```bash
+Rscript garfield-plot.R -i test.out -o output_path_prefix -t plot_title -f min \
+-padj thresh
+```

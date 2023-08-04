@@ -335,7 +335,7 @@ parser.add_argument('--disease', type=str, required=True)
 args = parser.parse_args()
 diseases = [item for item in args.disease.split(',')]
 
-rootPathGWAS = '/mnt/bioadhoc-temp/Groups/vd-vijay/emarquez/GWAS'
+rootPathGWAS = '../GWAS'
 
 ############    -----------------------------------------    ############
 ### ------------------------------ Main ----------------------------- ###
