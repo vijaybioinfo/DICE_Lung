@@ -4,7 +4,7 @@ DICE Lung
 Repo for our manuscript presenting the DICE tissue project. Check out our manuscript:
 - [*Single-cell eQTL analysis of activated T cell subsets reveals activation and cell type–dependent effects of disease-risk variants*](https://www.science.org/doi/10.1126/sciimmunol.abm2508#) (PLACEHOLDER; TO BE REPLACED)
 
-We have splitted the process in seven main sections:
+We have splitted the process into seven main sections:
 - Variant calling (based on WGS data)
 - scRNA-seq data analysis
 - scATAC-seq data analysis
@@ -18,8 +18,15 @@ Below we broadly describe these sections and within the directory corresponding 
 ---
 # Variant calling (based on WGS data)
 
-Cristian to define.
+This pipeline takes the fastq files as input and retrieves a VCF file with the variants called for all the donors in our cohort filtered by MAF, HWE, DP, and QC metrics.
+- Map reads to the reference genome.
+- Mark duplicates and recalibrates base quality scores.
+- Called variants and merged all donor's files together.
+- Recalibrates and filter variant calls.
+- Imputate missing genotype
+- Generate VCF file, dosage file, and matrix eQTL-like files.
 
+Check the submodule and methods section in our manuscript for more information. 
 
 ---
 # scRNA-seq data analysis
