@@ -45,12 +45,16 @@ The first step is described in the methods section of our manuscript in detail. 
 # scATAC-seq data analysis
 
 - Preprocessing of raw data was done entirely with 10x's cellranger atac.
-- Clustering, dimensionalty reduction, population definition, pseudobulk aggregation and peak calling was done in R with ArchR package and custom scripts.
+- Clustering, dimensionality reduction, population definition, pseudobulk aggregation and peak calling was done in R with ArchR package and custom scripts.
 
 ---
 # eQTL mapping
 
-Cristian to define
+- Normalize the pseudo-bulk expression data.
+- Calculate PCA from genotype.
+- Calculate PEER factors from expression data.
+- eQTL analysis by MatrixeQTL
+- Multiple correction test ([eigenMT](https://github.com/joed3/eigenMT) and permutation-based)
 
 ---
 # GWAS compilation
