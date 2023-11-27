@@ -4,3 +4,6 @@
 [submodule "scATAC-seq_data_analysis"]
 	path = scATAC-seq_data_analysis
 	url = git@github.com:caztle1304/DICE-Tissue_scATAC-seq.git
+[submodule "eQTL_mapping"]
+	path = eQTL_mapping
+	url = https://github.com/cristian2420/eQTL_mapping
