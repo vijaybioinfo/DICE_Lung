@@ -35,6 +35,7 @@ required by the colocalization workflow.
 
 
 *Colocalization analysis*
+--------------------------
 This analysis identifies colocalizing signals by asking 
 whether two different traits (e.g GWAS trait and eQTLs) 
 share causal genetic variants in the  user-defined genomic 
@@ -52,6 +53,7 @@ and check the README.md file.
 
 
 *GWAS*
+-------
 This workflow attempts to standardize GWAS data format 
 such as column names and data types, and aligns 
 reference and alternative alleles based on a reference 
