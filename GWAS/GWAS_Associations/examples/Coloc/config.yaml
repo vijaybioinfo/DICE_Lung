@@ -1,0 +1,24 @@
+---
+# Input pepfiles
+Trait1:
+  pepfile: {this_path}/Coloc/PEP_GWAS.yaml   #path to your pep file (GWAS or QTL)
+  amend: Asthma                              #Specify what project to use (Asthma)
+  Feature: Loci                              #Name of column for your genomic feature (e. g. Loci for GWAS or GENEID for eQTLs)
+  Type: cc                                   #Wether your data is case-control 'cc' ratio or quantitative trait 'quant'
+  Trait-Type: GWAS                           #Either GWAS or QTL
+  
+### Summary files are for Trait2
+Trait2:
+  pepfile: {this_path}/Coloc/PEP_QTL.yaml    #path to your pep file (GWAS or QTL)
+  amend: MyProject                           #Specify what project to use (Asthma)
+  Feature: GENEID                            #Name of column for your genomic feature (e. g. Loci for GWAS or GENEID for eQTLs)
+  Type: quant                                #Wether your data is case-control 'cc' ratio or quantitative trait 'quant'
+  Trait-Type: eQTL                           #Either GWAS or QTL
+
+
+### PPH4 Threshold
+PPH4: 0.5                                   #PPH4 threshold to filter data
+
+### Output and Temp dirs
+OutDir: {your_path}                         #Output directory
+WorkDir: {your_path}                        #Working directory
