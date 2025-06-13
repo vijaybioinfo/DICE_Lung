@@ -47,7 +47,7 @@ and QTL information.
 
 2.- Summarize and filter results using user-defined PPH4.
 
-For a detailed description, go to the R24/Coloc folder
+For a detailed description, go to the examples/Coloc folder
 and check the README.md file.
 
 
@@ -68,7 +68,7 @@ Steps:
 4.- Adjust statistics such as BETA and Z if SNP was 
 adjusted to match the reference panel.
 
-For a detailed description, go to the R24/GWAS folder and 
+For a detailed description, go to the examples/GWAS folder and 
 Check the README.md file.
 
 
