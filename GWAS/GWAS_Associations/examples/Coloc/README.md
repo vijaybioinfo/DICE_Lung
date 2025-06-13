@@ -8,7 +8,7 @@ of the available tools to perform
 colocalization analysis.
 
 
-For further reading see:
+For further reading, see:
 https://pubmed.ncbi.nlm.nih.gov/19039033/
 https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004383
 https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008720
@@ -16,9 +16,9 @@ https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008720
 
 Input Files
 -------------------
-Let's say we have data for 2 traits Asthma GWAS data and eQTL data
+Let's say we have data for 2 traits, Asthma GWAS data and eQTL data
 and one dataset for each. The analysis requires tsv files with the 
-columns listed below. Please check exaple data in data/ folder.
+columns listed below. Please check the example data in the data/ folder.
 
 *Data*
 
@@ -44,28 +44,28 @@ file in your PEP files.
 
 Configuration
 ----------------
-To start running you'll need to configure 3 files.
+To start running, you'll need to configure 3 files.
 
 1.- config.yaml: This file contains parameters 
 such as input data and output directories.
 
-2.- PEP_GWAS.yaml: Here you specified the samples 
+2.- PEP_GWAS.yaml: Here, you specified the samples 
 to use as well as the location of each sample.
 
-3.- PEP_QTL.yaml: Same as PEP_GWAS.yaml but for
+3.- PEP_QTL.yaml: Same as PEP_GWAS.yaml, but for
 your QTL data.
 
 How to Run
 -------------------
-It is highly recomended to run this on a HPC for maximum performance.
-Please check cluster_profile/config.yaml as an example for slurm 
+It is highly recommended that this be run on an HPC for maximum performance.
+Please check cluster_profile/config.yaml as an example for Slurm 
 configuration.
 
 Once you have created your config.yaml, PEP_GWAS.yaml
 and PEP_QTL.yaml you can test run the workflow as 
 follows.
 
-#enviroment activation
+#environment activation
 
 mamba activate R24;
 
@@ -89,7 +89,7 @@ loci that overlap with eQTL loci.
 2.- filtered: These are filtered results based on
 your PPH4 threshold
 
-3.- summary: Contains matrix like files listing 
+3.- summary: Contains matrix-like files listing 
 all filtered associations
 
 
