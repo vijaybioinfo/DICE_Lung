@@ -21,6 +21,7 @@ and one dataset for each. The analysis requires tsv files with the
 columns listed below. Please check exaple data in data/ folder.
 
 *Data*
+
 1.- Chromosome
 
 2.- Position
@@ -47,8 +48,10 @@ To start running you'll need to configure 3 files.
 
 1.- config.yaml: This file contains parameters 
 such as input data and output directories.
+
 2.- PEP_GWAS.yaml: Here you specified the samples 
 to use as well as the location of each sample.
+
 3.- PEP_QTL.yaml: Same as PEP_GWAS.yaml but for
 your QTL data.
 
@@ -63,10 +66,15 @@ and PEP_QTL.yaml you can test run the workflow as
 follows.
 
 #enviroment activation
+
 mamba activate R24;
+
 #dry-run
+
 snakemake -np --configfile config.yaml --snakefile ../../R24/Coloc/workflow/Snakefile
+
 #run
+
 snakemake --profile ../cluster_profile --configfile config.yaml --snakefile ../../R24/Coloc/workflow/Snakefile
 
 
