@@ -1,0 +1,49 @@
+from scripts import initialize, clean_logs, temp_dir, cp, make_run_args
+
+################## Initialize Interfaces ###################
+OUT, T1, T2 = initialize(config)
+
+### Get relevant data
+METHOD = config["METHOD"]
+P1, P2 = T1.Projects(True), T2.Projects(True)
+T1_PROJECTS, T1_CATEGORIES = zip(*set((x, y) for x, y in zip(T1.Projects(), T1.Categories())))
+
+################################################################################################################################################################
+############################################################### WORKFLOW #######################################################################################
+################################################################################################################################################################
+
+############## Create Working directory ##################
+wkdir = temp_dir(config["WorkDir"])
+workdir: wkdir
+
+### Clean log files
+onstart:
+	clean_logs(f"{wkdir}/logs")
+
+### Copy R module
+cp(srcdir("../module"))
+
+############## Load Rules ##################
+include: "rules/coloc.smk"
+include: "rules/filters.smk"
+include: "rules/summary.smk"
+
+################## Wildcards Constraints #####################
+wildcard_constraints:
+	project1 = "|".join(P1),
+	project2 = "|".join(P2),
+	dataset1 = "|".join(T1.Datasets(True)),
+	dataset2 = "|".join(T2.Datasets(True)),
+	category = "|".join(T1.Categories(True))
+
+
+############################################ Target Files ####################################################
+localrules: filter
+
+rule all:
+	input:
+		tables = expand(
+						expand(OUT + "/summary/{project2}/{{project1}}/{{project1}}_{{category}}.tsv", project2=P2),
+						zip, project1=T1_PROJECTS, category=T1_CATEGORIES
+						)
+

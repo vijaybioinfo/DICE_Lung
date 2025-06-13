@@ -1,0 +1,39 @@
+from scripts import initialize, temp_dir, clean_logs, file_exists, get_filename, get_mem_gb
+
+#################### Initialize Interfaces ##################
+CFG, GS = initialize(config)
+
+GENOMES = CFG.output_genome_versions()
+DISEASES, DATASETS = GS.Diseases(), GS.Datasets()
+
+################################################################################################################################################################
+############################################################### WORKFLOW #######################################################################################
+################################################################################################################################################################
+
+############## Create Working directory ##################
+wkdir = temp_dir(config["WorkDir"])
+workdir: wkdir
+
+### Clean log files
+onstart:
+	clean_logs(f"{wkdir}/logs")
+
+############## Load Rules ##################
+include: "rules/step1.smk"
+include: "rules/step2.smk"
+include: "rules/step3.smk"
+include: "rules/step4.smk"
+
+################################# Define wildcards constraints to available disease and datasets ################################
+wildcard_constraints:
+    disease="|".join(GS.Diseases(True)),
+    dataset="|".join(GS.Datasets(True))
+
+
+################################################ Target Files ######################################################################
+
+rule all:
+    input:
+        files = expand( expand(CFG.OutDir + "/data/{version}/{{disease}}/{{dataset}}.tsv", version=GENOMES), zip, disease=DISEASES, dataset=DATASETS),
+        risk_alleles = expand(CFG.OutDir + "/risk_alleles/{version}/{disease}.tsv", version=GENOMES, disease=GS.Diseases(True)),
+        sample_tables = expand(CFG.OutDir + "/sample_tables/{version}/{disease}.csv", version=GENOMES, disease=GS.Diseases(True))
