@@ -21,7 +21,7 @@ and one dataset for each. The analysis requires tsv files with the
 columns listed below. Please check exaple data in data/ folder.
 
 *Data*
-1.- Chromosome
+1.- Chromosome\n
 2.- Position
 3.- SNPID
 4.- P
