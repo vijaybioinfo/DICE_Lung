@@ -9,10 +9,12 @@ This repository contains Snakemake-based gene-prioritization
 analyses to identify potential causal genes relevant in disease.
 
 Workflows:
+
 1.- GWAS: This workflow attempts to clean GWAS data to keep a 
 consistent data format and aligns alleles to a reference panel.
-2.- Coloc: Powered by Coloc packages, this workflow performs 
-colocalization analysis between two traits.
+
+2.- Coloc: Powered by Coloc package, this workflow performs 
+Colocalization analysis between two traits.
 
 
 Description
@@ -42,6 +44,7 @@ regions. The tool employed for this analysis is Coloc
 Steps:
 1.- Run coloc.abf function using user-defined GWAS loci 
 and QTL information.
+
 2.- Summarize and filter results using user-defined PPH4.
 
 For a detailed description, go to the R24/Coloc folder
@@ -55,9 +58,13 @@ reference and alternative alleles based on a reference
 panel.
 
 Steps:
+
 1.- Normalize column names.
+
 2.- Retrieve missing coordinates when possible.
+
 3.- Align alleles to the  reference panel.
+
 4.- Adjust statistics such as BETA and Z if SNP was 
 adjusted to match the reference panel.
 
@@ -67,10 +74,10 @@ Check the README.md file.
 
 Set up Environment
 ---------------------
-You'll need to install mamba to create the R24 enviroment.
+You'll need to install mamba to create the R24 environment.
 See https://mamba.readthedocs.io/en/latest/installation.html.
 
-Once mamba is install in your system follow the next steps.
+Once mamba is installed on your system, follow the next steps.
 
 1.- Clone this repository
 
@@ -88,4 +95,4 @@ Now everything is ready to run the workflows.
 
 Contact
 --------------
-Please email to jrocha@lji.org for any questions.
+Please email jrocha@lji.org for any questions.
