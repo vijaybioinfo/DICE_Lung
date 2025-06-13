@@ -10,7 +10,7 @@ We have splitted the process into seven main sections:
 - scATAC-seq data analysis
 - eQTL mapping
 - GWAS compilation
-- Overlap and colocalization analyses
+- Colocalization analysis
 - GARFIELD
 
 Below we broadly describe these sections and within the directory corresponding to each of them we describe them in extensive detail.
