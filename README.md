@@ -98,12 +98,15 @@ python3 QC_preProcess_GWAS.py --disease [name_of_disease(comma separated)]
 ## Stage 2 : Standardization
 
 This workflow attempts to standardize GWAS data format, such as column names and data types, and aligns reference and alternative alleles based on a reference panel.
+
 For detailed information, go to GWAS/GWAS_Associations and check the readme file.
 
 ---
 # Colocalization analyses
 
-Job to define.
+Colocalization analysis infers whether two phenotypes are likely to be influenced by the same causal genetic variant in a given region. Coloc is one of the available tools for performing colocalization analysis.
+
+For detailed information, go to GWAS/GWAS_Associations and check the readme file.
 
 ---
 # GARFIELD
