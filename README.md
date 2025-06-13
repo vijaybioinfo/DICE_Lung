@@ -97,10 +97,11 @@ python3 QC_preProcess_GWAS.py --disease [name_of_disease(comma separated)]
 
 ## Stage 2 : Standardization
 
-Job to define.
+This workflow attempts to standardize GWAS data format, such as column names and data types, and aligns reference and alternative alleles based on a reference panel.
+For detailed information, go to GWAS/GWAS_Associations and check the readme file.
 
 ---
-# Overlap and colocalization analyses
+# Colocalization analyses
 
 Job to define.
 
