@@ -1,8 +1,8 @@
 DICE Lung
 ===========
 
-Repo for our manuscript presenting the DICE tissue project. Check out our manuscript:
-- *Impact of genetic variants on gene expression in tissue-resident immune cells*
+Repo for our manuscript presenting the DICE tissue project. Check out our manuscript (available soon):
+- *Tissue-resident immune cells drive genetic risk in autoimmune and infectious diseases*
 
 We have splitted the process into seven main sections:
 - Variant calling (based on WGS data)
