@@ -1,0 +1,11 @@
+prediction_models:
+  - model: predixcan_enet
+    type: eqtl
+    context: Liver
+    path: "/paht/to/db/file/model_of_user_choice.db"
+
+prediction_models:
+  - model: model type
+    type: data type - e.g. expression / eqtl
+    context: Tissue type
+    path: "/paht/to/db/file/model_of_user_choice.db"

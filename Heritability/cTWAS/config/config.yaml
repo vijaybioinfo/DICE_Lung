@@ -1,0 +1,7 @@
+meta_path: "/PATH/TO/meta.tsv"
+OUT: "/PATH/TO/test_smk_single2"
+workdir: "/PATH/TO/workdir/"
+expression_weights: "/PATH/TO/Prediction_models/PredixcanV8/mashr_eqtl"
+REGIONS_PATH: "/PATH/TO/miniforge3/envs/cTWAS/lib/R/library/ctwas/extdata/ldetect/EUR.b38.ldetect.regions.RDS"
+LD_DIRS: "/PATH/TO/data/LD_reference/LD_BioBank/"
+GWAS_path: "/PATH/TO/data/GWAS_UKBIOB"
