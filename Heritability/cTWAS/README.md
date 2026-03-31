@@ -30,7 +30,7 @@ The percentage variance explained by a molecular phenotype is then divided by th
 
 --- Directories ---
 
-- config
+- /Heritability/cTWAS/config
  
   config.yaml
   
@@ -40,33 +40,45 @@ The percentage variance explained by a molecular phenotype is then divided by th
   
     Metadata for telling Snakemake which GWAS–molecular trait prediction model combinations need to be run. This file provides necessary wildcards to the Snakefile. Additionally, GWAS_n needs to be listed here for heritability calculations.
 
-- envs
+- /Heritability/cTWAS/envs:
 
   ctwas.yaml
   
     cTWAS dependencies to be installed by mamba.
 
   SnakeMake.yaml
+  
     A separate Snakemake environment needs to be created due to dependency conflicts when installed in the cTWAS environment.
 
-- scripts
+- /Heritability/cTWAS/scripts/
+
   Relevant cTWAS wrapper scripts written in R. Please refer to the script_params.md file for more information.
 
-- shell
-  - jobs
+- /Heritability/cTWAS/shell
+
+  - /shell/jobs
+  
     Test.sh
       .sh file for running the Snakefile configured to Herman cluster settings.
 
-  - MANUAL_SLURM_ARRAY
+  - /shell/MANUAL_SLURM_ARRAY
+  
     Individual .sh files for running each R wrapper script manually if needed.
+    
     e.g. 1_prepare_reference.sh
+    
     Each file is configured to Herman cluster settings.
+    
     Each .sh also corresponds to a Snakefile rule.
 
-  - profiles
+  - /shell/profiles
+  
     Files for configuring the Snakemake pipeline on a Herman cluster server.
+    
     config.yaml
+    
     slurm-jobscript.sh
+    
     status-sacct.sh
 
 - Snakefile
@@ -92,13 +104,16 @@ cd /path/to/Heritability
 4.- Create environment
 
 mamba env create -f envs/ctwas.yml
+
 mamba activate ctwas
 
 5.- Navigate to the cTWAS developer's GitHub - https://github.com/xinhe-lab/ctwas/tree/multigroup
+
 Follow installation instructions (ensure that you are in the ctwas mamba environment)
+
 Code provided by cTWAS developers (Xinhe lab) below.
 
-install.packages("remotes")
+install.packages("remotes"
 remotes::install_github("xinhe-lab/ctwas", ref = "multigroup")
 
 6.- Create Snakemake environment
