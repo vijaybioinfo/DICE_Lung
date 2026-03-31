@@ -81,7 +81,9 @@ The percentage variance explained by a molecular phenotype is then divided by th
     
     status-sacct.sh
 
-- Snakefile
+- /Heritability/cTWAS/Snakefile
+
+  Snakemake file for running cTWAS.
 
 *********
 
@@ -99,13 +101,16 @@ The percentage variance explained by a molecular phenotype is then divided by th
 
 3.- Move to this repo's directory
 
+```bash
 cd /path/to/Heritability
+```
 
 4.- Create environment
 
+```bash
 mamba env create -f envs/ctwas.yml
-
 mamba activate ctwas
+```
 
 5.- Navigate to the cTWAS developer's GitHub - https://github.com/xinhe-lab/ctwas/tree/multigroup
 
@@ -113,12 +118,16 @@ Follow installation instructions (ensure that you are in the ctwas mamba environ
 
 Code provided by cTWAS developers (Xinhe lab) below.
 
+```bash
 install.packages("remotes"
 remotes::install_github("xinhe-lab/ctwas", ref = "multigroup")
+```
 
 6.- Create Snakemake environment
 
+```bash
 mamba env create -f envs/SnakeMake.yaml
+```
 
 *********
 
