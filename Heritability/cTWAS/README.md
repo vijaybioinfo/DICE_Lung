@@ -142,8 +142,8 @@ Code provided by cTWAS developers (Xinhe lab) below.
 When executing this command please be sure to be in the ctwas mamba environment.
 
 ```bash
-install.packages("remotes"
-remotes::install_github("xinhe-lab/ctwas", ref = "multigroup")
+install.packages("remotes")
+remotes::install_github("xinhe-lab/ctwas",ref = "multigroup")
 ```
 
 6.- Create Snakemake environment
