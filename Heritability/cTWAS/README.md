@@ -53,10 +53,12 @@ The percentage variance explained by a molecular phenotype is then divided by th
 
 **- /Heritability/cTWAS/config**
  
-config.yaml
+config.yaml 
+
    - Configuration file for Snakemake.
 
 meta_gtex_49.tsv
+
   - Metadata for telling Snakemake which GWAS–molecular trait prediction model combinations need to be run. This file provides necessary wildcards to the Snakefile. Additionally, GWAS_n needs to be listed here for heritability calculations.
 
 **- /Heritability/cTWAS/envs:**
