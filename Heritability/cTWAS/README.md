@@ -26,6 +26,15 @@ medRxiv 2025.12.19.25342620; doi: https://doi.org/10.64898/2025.12.19.25342620
 
 https://xinhe-lab.github.io/multigroup_ctwas/
 
+**This repo**
+
+The codes in this repo wraps native cTWAS functions to permit streamlined processing inputs for the following steps:
+
+1) GWAS study harmonisation with LD panels.
+2) Harmonisation of molecular QTL prediction models with GWAS studies and LD panels.
+3) Running the cTWAS analysis.
+4) Aggregating output data and calculating heritability.
+
 *********
 
 **Heritability as a readout:**
