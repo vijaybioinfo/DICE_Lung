@@ -94,7 +94,7 @@ The percentage variance explained by a molecular phenotype is then divided by th
 
   - **/shell/profiles/**
   
-    Files for configuring the Snakemake pipeline on a Herman cluster server.
+    Files for configuring the Snakemake pipeline on a Herman cluster.
     
     **config.yaml**
     
