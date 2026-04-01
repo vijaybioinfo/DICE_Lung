@@ -12,13 +12,13 @@ This repo contains scripts that wrap causal cTWAS functions from:
 
 **Single Group cTWAS**
 
-**Zhao, S., Crouse, W., Qian, S. et al. Adjusting for genetic confounders in transcriptome-wide association studies improves discovery of risk genes of complex traits. Nat Genet 56, 336–347 (2024). https://doi.org/10.1038/s41588-023-01648-9**
+Zhao, S., Crouse, W., Qian, S. et al. Adjusting for genetic confounders in transcriptome-wide association studies improves discovery of risk genes of complex traits. Nat Genet 56, 336–347 (2024). https://doi.org/10.1038/s41588-023-01648-9
 
 **Multi Group cTWAS**
 
-**Integrating multi-omics and multi-context QTL data with GWAS reveals the genetic architecture of complex traits and improves the discovery of risk genes
+Integrating multi-omics and multi-context QTL data with GWAS reveals the genetic architecture of complex traits and improves the discovery of risk genes
 Sheng Qian, Kaixuan Luo, Xiaotong Sun, Wesley Crouse, Lifan Liang, Jing Gu, Matthew Stephens, Siming Zhao, Xin He
-medRxiv 2025.12.19.25342620; doi: https://doi.org/10.64898/2025.12.19.25342620**
+medRxiv 2025.12.19.25342620; doi: https://doi.org/10.64898/2025.12.19.25342620
 
 *********
 
