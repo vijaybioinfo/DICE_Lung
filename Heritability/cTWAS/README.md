@@ -51,23 +51,23 @@ The percentage variance explained by a molecular phenotype is then divided by th
 
 --- Directories ---
 
-**- /Heritability/cTWAS/config**
+**- /Heritability/cTWAS/config/**
  
-config.yaml 
+**config.yaml**
 
    - Configuration file for Snakemake.
 
-meta_gtex_49.tsv
+**meta_gtex_49.tsv**
 
   - Metadata for telling Snakemake which GWAS–molecular trait prediction model combinations need to be run. This file provides necessary wildcards to the Snakefile. Additionally, GWAS_n needs to be listed here for heritability calculations.
 
 **- /Heritability/cTWAS/envs:**
 
-  ctwas.yaml 
+  **ctwas.yaml**
   
   - cTWAS dependencies to be installed by mamba.
 
-  SnakeMake.yaml 
+  **SnakeMake.yaml**
   
   - A separate Snakemake environment needs to be created due to dependency conflicts when installed in the cTWAS environment.
 
@@ -75,32 +75,32 @@ meta_gtex_49.tsv
 
   Relevant cTWAS wrapper scripts written in R. Please refer to the script_params.md file for more information.
 
-**- /Heritability/cTWAS/shell**
+**- /Heritability/cTWAS/shell/**
 
-  - /shell/jobs
+  - **/shell/jobs/**
   
-    Test.sh
+    **Test.sh**
       .sh file for running the Snakefile configured to Herman cluster settings.
 
-  - /shell/MANUAL_SLURM_ARRAY
+  - **/shell/MANUAL_SLURM_ARRAY/**
   
     Individual .sh files for running each R wrapper script manually if needed.
     
-    e.g. 1_prepare_reference.sh
+    e.g. **1_prepare_reference.sh**
     
     Each file is configured to Herman cluster settings.
     
     Each .sh also corresponds to a Snakefile rule.
 
-  - /shell/profiles
+  - **/shell/profiles/**
   
     Files for configuring the Snakemake pipeline on a Herman cluster server.
     
-    config.yaml
+    **config.yaml**
     
-    slurm-jobscript.sh
+    **slurm-jobscript.sh**
     
-    status-sacct.sh
+    **status-sacct.sh**
 
 **- /Heritability/cTWAS/Snakefile**
 
