@@ -61,13 +61,9 @@ meta_gtex_49.tsv
 
 **- /Heritability/cTWAS/envs:**
 
-  ctwas.yaml
-  
-    cTWAS dependencies to be installed by mamba.
+  ctwas.yaml - cTWAS dependencies to be installed by mamba.
 
-  SnakeMake.yaml
-  
-    A separate Snakemake environment needs to be created due to dependency conflicts when installed in the cTWAS environment.
+  SnakeMake.yaml - A separate Snakemake environment needs to be created due to dependency conflicts when installed in the cTWAS environment.
 
 **- /Heritability/cTWAS/scripts/**
 
