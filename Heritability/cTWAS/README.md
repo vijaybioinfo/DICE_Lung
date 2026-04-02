@@ -111,7 +111,9 @@ WARNING - user must ensure that SNPIDs are consistent amonst all three file type
    GTEx v8 models on eQTL and sQTL
    https://predictdb.org/post/2021/07/21/gtex-v8-models-on-eqtl-and-sqtl/
 
-3) LD matrices
+   If generating own models and user opts to use PredictDB format (recommended), cTWAS is expecting a varID column to be present (SNPID info) consisting of the following information    and format - chr_pos_ref_alt_GenomeVersion.
+
+4) LD matrices
    Please note LD structure is critical for cTWAS. Due to imputation of GWAS weights from prediction model statistics, and causality being tested per haploblock, it is important to match LD information to the GWAS data.
 
    (GWAS, model, and LD should be matched at the population level.)
