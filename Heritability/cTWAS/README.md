@@ -45,6 +45,7 @@ This repository contains wrapper scripts to process data using the cTWAS tool, a
 
 The percentage variance explained by a molecular phenotype is then divided by the total percentage variance explained (by molecular trait–mediated effects and unexplained genetic effects) to obtain the proportion of heritability that can be attributed to a molecular trait. These scripts run one molecular trait and one GWAS study at a time, essentially implementing the cTWAS single-tissue modality.
 
+*********
 
 **------ Environment Set Up: ------**
 
