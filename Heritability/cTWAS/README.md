@@ -164,7 +164,3 @@ Main workflow defining the cTWAS pipeline
 ## Notes
 - Shell scripts mirror Snakemake rules for modular execution  
 - Pipeline is configured for SLURM-based HPC environments (e.g. Herman)
-```
-
-
-
