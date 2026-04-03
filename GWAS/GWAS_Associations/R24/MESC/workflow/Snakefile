@@ -1,0 +1,32 @@
+import os
+import re
+from scripts import initialize, temp_dir, clean_logs, AvailableAnalyses
+
+################## Initialize Interfaces ###################
+wkdir = temp_dir(config.get("WorkDir"))
+OUT = f"{config['OutDir']}/MESC"
+
+CFG, GS, IP = initialize(config)
+UDISEASES, UDATASETS = GS.Diseases(True), GS.Datasets(True) 
+DISEASES, CATEGORIES = zip(*set((x, y) for x, y in zip(GS.Diseases(), GS.Categories())))
+
+################################################################################################################################################################
+############################################################### WORKFLOW #######################################################################################
+################################################################################################################################################################
+
+############## Create Working directory ##################
+workdir: wkdir
+### Clean log files
+onstart:
+	clean_logs(f"{wkdir}/logs")
+
+############## Load Analyses ##################
+if CFG.analysis_type == AvailableAnalyses.SummaryStats.name:
+    include: "rules/analysis.ss.smk"
+else:
+    include: "rules/analysis.noss.smk"
+
+
+rule all:
+    input:
+        TARGET_FILES

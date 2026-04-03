@@ -1,0 +1,51 @@
+import os
+import re
+from scripts import initialize, temp_dir, clean_logs
+
+################## Initialize Interfaces ###################
+OUT, BASE, GS, PROJECT = initialize(config)
+
+### Get relevant data
+PROJECTS, PROJECT_DATASETS = PROJECT.Projects(True), PROJECT.Datasets(True)
+
+UDISEASES, UDATASETS = GS.Diseases(True), GS.Datasets(True) 
+DISEASES, CATEGORIES = zip(*set((x, y) for x, y in zip(GS.Diseases(), GS.Categories())))
+
+################################################################################################################################################################
+############################################################### WORKFLOW #######################################################################################
+################################################################################################################################################################
+
+############## Create Working directory ##################
+wkdir = temp_dir(config.get("WorkDir"))
+workdir: wkdir
+
+### Clean log files
+onstart:
+	clean_logs(f"{wkdir}/logs")
+
+############## Load Rules ##################
+#include: "rules/split.smk"
+include: "rules/annotation.smk"
+include: "rules/ldscore.smk"
+include: "rules/munge_stats.smk"
+include: "rules/heritability.smk"
+include: "rules/summary.smk"
+
+################## Wildcards contraints ###################
+wildcard_constraints:
+    disease = "|".join(UDISEASES),
+    dataset = "|".join(UDATASETS),
+    category = "|".join(GS.Categories(True)),
+    
+    project = "|".join(PROJECTS),
+    cell = "|".join(PROJECT_DATASETS),
+    chr = "|".join(BASE.Chromosomes)
+
+
+############## Target Files #####################
+rule all:
+    input:
+        expand(
+                expand(OUT + "/summary/{{project}}/{disease}/{disease}_{category}.tsv", zip, disease=DISEASES, category=CATEGORIES), 
+                project=PROJECTS
+                ) 

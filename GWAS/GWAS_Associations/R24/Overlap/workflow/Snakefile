@@ -1,0 +1,66 @@
+from scripts import initialize, temp_dir, clean_logs
+
+################## Initialize Interfaces ###################
+CFG, GS, QTL = initialize(config)
+
+UDISEASES, UDATASETS = GS.Diseases(True), GS.Datasets(True) 
+DISEASES, CATEGORIES = zip(*set((x, y) for x, y in zip(GS.Diseases(), GS.Categories())))
+
+################## Functions #################
+def get_project_disease(wildcards):
+    return wildcards.project, wildcards.disease
+
+def get_overlaps(wildcards):
+    project, disease = get_project_disease(wildcards)
+    dataset = wildcards.dataset
+    return [CFG.prefix + f"/overlap/{project}/{disease}/{dataset}/{cell}.tsv" for cell in QTL.get_datasets(project)]
+
+def merge_heatmap(wildcards):
+    project, disease = get_project_disease(wildcards)
+    cells = QTL.get_datasets(project)
+    datasets = GS.get_datasets(wildcards)
+
+    return [CFG.prefix + f"/overlap/{project}/{disease}/{dataset}/{cell}.tsv" for dataset in datasets for cell in cells]
+
+def merge_by_category(wildcards):
+    project, disease = get_project_disease(wildcards)
+    return [CFG.prefix + f"/overlap/{project}/{disease}/{dataset}.tsv" for dataset in GS.get_by_category(wildcards)]
+
+
+################################################################################################################################################################
+############################################################### WORKFLOW #######################################################################################
+################################################################################################################################################################
+
+############## Create Working directory ##################
+wkdir = temp_dir(config["WorkDir"])
+workdir: wkdir
+
+### Clean log files
+onstart:
+	clean_logs(f"{wkdir}/logs")
+
+############## Load Rules ##################
+include: "rules/ld.smk"
+include: "rules/overlap.smk"
+include: "rules/summary.smk"
+
+################## Wildcards contraints ###################
+wildcard_constraints:
+    disease = "|".join(UDISEASES),
+    dataset = "|".join(UDATASETS),
+    project = "|".join(QTL.Projects(True)),
+    cell = "|".join(QTL.Datasets(True)),
+    category = "|".join(GS.Categories(True))
+
+
+############## Target Files #####################
+rule all:
+    input:
+        expand(expand(CFG.prefix + "/summary/{{project}}/{disease}/{disease}_{category}.tsv", zip, disease=DISEASES, category=CATEGORIES), project=QTL.Projects(True))
+
+
+onsuccess:
+    shell(f"if [ -d '{wkdir}/tmp_LD' ]; then rm -r {wkdir}/tmp_LD; fi")
+
+onerror:
+    shell(f"if [ -d '{wkdir}/tmp_LD' ]; then rm -r {wkdir}/tmp_LD; fi")
