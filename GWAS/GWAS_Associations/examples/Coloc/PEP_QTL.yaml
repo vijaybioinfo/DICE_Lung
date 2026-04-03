@@ -1,0 +1,16 @@
+---
+# PEP Specifications
+pep_version: 2.0.0
+
+sample_modifiers:
+  append:
+    file: file
+  derive:
+    attributes: [file]
+    sources:
+      file: "{this_path}/Coloc/data/eQTLs/{project}/{sample_name}.*"                    #Patttern to capture files
+
+project_modifiers:
+  amend:
+    MyProject: 
+      sample_table: {this_path}/Coloc/sample_tables/MyProject.csv                       #Sample metadata file for your QTL project

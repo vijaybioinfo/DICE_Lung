@@ -1,0 +1,19 @@
+---
+pep_version: 2.0.0
+
+#Refer to folder data to check for examples.
+
+sample_modifiers:
+  append:
+    file: raw
+  derive:
+    attributes: [file]
+    sources:
+      raw: "{your_path}/GWAS/data/{disease}/{sample_name}*"                                 #Path to your original data
+                                                                                            #You need to provide a folder structure like this -> {disease}/{sample_name}
+project_modifiers:
+  amend:
+    ################################ Asthma ############################################
+    Asthma:
+      sample_table: {your_path}/GWAS/sample_tables/Asthma.csv                                #Sample table to use
+          

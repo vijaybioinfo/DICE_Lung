@@ -1,0 +1,41 @@
+jobs: 250
+latency-wait: 60
+
+cluster:
+  mkdir -p logs/{rule} &&
+  sbatch
+    --parsable
+    --job-name=s.{rule}
+    --partition=compute
+    --nodes=1
+    --ntasks=1
+    --cpus-per-task={threads}
+    --mem={resources.mem_gb}GB
+    --time={resources.walltime}
+    --output=logs/{rule}/s.{rule}.o%j
+    --error=logs/{rule}/s.{rule}.e%j
+
+cluster-status: {cluster_status}
+jobscript: {jobscript}
+
+cluster-cancel: scancel
+cluster-cancel-nargs: 100
+
+default-resources:
+  - threads=1
+  - mem_gb=10
+  - walltime=15
+
+printshellcmds: True
+
+restart-times: 1
+keep-going: True
+
+rerun-triggers: mtime
+rerun-incomplete: True
+
+local-cores: 1
+max-jobs-per-second: 100
+max-status-checks-per-second: 10
+
+use-conda: True

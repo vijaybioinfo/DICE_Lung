@@ -1,0 +1,17 @@
+---
+pep_version: 2.0.0
+
+sample_modifiers:
+  append:
+    file: main
+  derive:
+    attributes: [file]
+    sources: 
+      main: "{this_path}/Overlap/data/GWAS/{disease}/{sample_name}.*"               #Patttern to capture files
+
+
+project_modifiers:
+  amend:
+    ############################# Asthma ################################
+    Asthma:
+      sample_table: {this_path}/Overlap/sample_tables/Asthma.csv                     #Sample metadata file for your QTL project

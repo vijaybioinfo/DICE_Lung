@@ -1,0 +1,24 @@
+---
+PEP:
+  pepfile: {this_path}/GWAS/PEP.yaml                               #path to your pep file GWAS
+  amend: Asthma                                                    #Specify what project to use (Asthma)
+
+OutputDirectory: {your_path}
+WorkDir: {your_path}
+
+
+##### List of output genome versions ####
+Genome-Versions:                                                  
+  - hg19
+  - hg38
+
+##### SNP databases to align alleles and retrive RSIDs #####
+SNP-Database:
+  hg19: {absolute path to SNP database for hg19}                  #Database with your reference panel's SNPs
+  hg38: {absolute path to SNP database for hg38}
+
+##### Chain Files to liftover differente genome versions #######
+### Filename example: hg19Tohg38.over.chain.gz
+ChainFiles:
+  - {your_path}/hg19Tohg38.over.chain.gz                          #Chainfiles to perform liftover
+  - {your_path}/hg38Tohg19.over.chain.gz

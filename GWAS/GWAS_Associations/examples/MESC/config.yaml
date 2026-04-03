@@ -1,0 +1,33 @@
+---
+### Input pepfiles ###
+GWAS_PEP:
+  pepfile: {this_path}/MESC/PEP_GWAS.yaml
+  amend: Asthma
+
+PROJECT_PEP:
+  pepfile: {this_path}/MESC/PEP_QTL.yaml
+  amend: MyProject
+
+### Software ###
+SOFTWARE:
+  MESC: {path_to_mesc}/mesc/run_mesc.py
+  META_ANALYSIS: {path_to_mesc}/mesc/meta_analyze_weights.py
+  MUNGE_STATS: {path_to_ldsc}/munge_sumstats.py
+  PLINK: {path_to_plink}/plink
+
+
+### Configuration ###
+ANALYSIS_TYPE: SummaryStats
+
+### Non Summary Requirements ###
+#GENOTYPE:
+#  COHORT: {path_to_reference_panels}/DICE.rsid
+#  PANEL: {path_to_reference_panels}/1000G/hg38/1000G.rsid
+
+### Non Summary Requirements ###
+ANNOTATION: {path_to_annotation}/GRCh38_annotation.csv
+SNP_DATABASE: {path_to_reference_panels}/dbSNP/hg38/dbSNP156.db
+
+
+OutDir: {path_to_output_directory}/MESC
+WorkDir: {path_to_working_dir}/MESC

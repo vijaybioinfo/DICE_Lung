@@ -1,0 +1,24 @@
+---
+# Input pepfiles
+GWAS_PEP:
+  pepfile: {this_path}/Overlap/PEP_GWAS.yaml                     #path to your pep file (GWAS or QTL)
+  amend: Asthma                                                  #Specify what project to use (Asthma)
+
+QTL_PEP:
+  pepfile: {this_path}/Overlap/PEP_QTL.yaml                      #path to your pep file (GWAS or QTL)
+  amend: MyProject                                               #Specify what project to use (Asthma)
+  Feature: "GENENAME"                                            #Feature column name
+
+### Output and Temp dirs
+OutDir: {your_path}                                              #Your output directory
+WorkDir: {your_path}                                             #Your working directory
+
+########### LD configuration example ##########                  #If you want to estimate LD for GWAS provide bfile and donorid files.
+LD:                                                              #Check for --keep in plink documentation.
+  bfile: {your_path}/1000G
+  populations:
+    EUR: {your_path}/populations/EUR.txt
+#    AFR: {your_path}/populations/AFR.txt
+#    AMR: {your_path}/populations/AMR.txt
+#    EAS: {your_path}/populations/EAS.txt
+#    SAS: {your_path}/populations/SAS.txt
