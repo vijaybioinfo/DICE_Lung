@@ -122,40 +122,6 @@ WARNING - user must ensure that SNPIDs are consistent amonst all three file type
    https://uchicago.app.box.com/s/jqocacd2fulskmhoqnasrknbt59x3xkn
 
 *********
-```bash
-`-- cTWAS
-    |-- config
-    |   |-- config.yaml
-    |   `-- meta_gtex_49.tsv
-    |-- envs
-    |   |-- ctwas.yaml
-    |   `-- SnakeMake.yaml
-    |-- README.md
-    |-- script_params.md
-    |-- scripts
-    |   |-- 1_prepare_referece.R
-    |   |-- 2_Process_GWAS.R
-    |   |-- 3_process_weights.R
-    |   |-- 4_cTWAS_Runner.R
-    |   |-- 5_summarise.R
-    |   |-- utils.R
-    |   `-- Weights_from_sumstats.R
-    |-- shell
-    |   |-- jobs
-    |   |   `-- Test.sh
-    |   |-- MANUAL_SLURM_ARRAY
-    |   |   |-- 1_prepare_refrence.sh
-    |   |   |-- 2_Process_GWAS.sh
-    |   |   |-- 3_process_weights.sh
-    |   |   |-- 4_tissue_single_cTWAS_Runner_ar.sh
-    |   |   |-- 5_tissue_single_visualise.sh
-    |   |   `-- weight_config.yaml
-    |   `-- profiles
-    |       |-- config.yaml
-    |       |-- slurm-jobscript.sh
-    |       `-- status-sacct.sh
-    `-- Snakefile```
-
 
 **------ Repo Contents ------**
 
@@ -217,4 +183,41 @@ WARNING - user must ensure that SNPIDs are consistent amonst all three file type
   Snakemake file for running cTWAS.
 
 *********
+
+```bash
+`-- cTWAS
+    |-- config
+    |   |-- config.yaml
+    |   `-- meta_gtex_49.tsv
+    |-- envs
+    |   |-- ctwas.yaml
+    |   `-- SnakeMake.yaml
+    |-- README.md
+    |-- script_params.md
+    |-- scripts
+    |   |-- 1_prepare_referece.R
+    |   |-- 2_Process_GWAS.R
+    |   |-- 3_process_weights.R
+    |   |-- 4_cTWAS_Runner.R
+    |   |-- 5_summarise.R
+    |   |-- utils.R
+    |   `-- Weights_from_sumstats.R
+    |-- shell
+    |   |-- jobs
+    |   |   `-- Test.sh
+    |   |-- MANUAL_SLURM_ARRAY
+    |   |   |-- 1_prepare_refrence.sh
+    |   |   |-- 2_Process_GWAS.sh
+    |   |   |-- 3_process_weights.sh
+    |   |   |-- 4_tissue_single_cTWAS_Runner_ar.sh
+    |   |   |-- 5_tissue_single_visualise.sh
+    |   |   `-- weight_config.yaml
+    |   `-- profiles
+    |       |-- config.yaml
+    |       |-- slurm-jobscript.sh
+    |       `-- status-sacct.sh
+    `-- Snakefile```
+```
+
+
 
