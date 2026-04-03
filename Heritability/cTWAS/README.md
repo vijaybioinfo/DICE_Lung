@@ -195,9 +195,6 @@ WARNING - user must ensure that SNPIDs are consistent amonst all three file type
     |   |-- ctwas.yaml
     |   `-- SnakeMake.yaml
     |
-    |-- README.md
-    |-- script_params.md
-    |
     |-- scripts
     |   |-- 1_prepare_referece.R
     |   |-- 2_Process_GWAS.R
@@ -224,6 +221,9 @@ WARNING - user must ensure that SNPIDs are consistent amonst all three file type
     |       |-- config.yaml
     |       |-- slurm-jobscript.sh
     |       `-- status-sacct.sh
+    |
+    |-- README.md
+    |-- script_params.md
     |
     `-- Snakefile
 ```
