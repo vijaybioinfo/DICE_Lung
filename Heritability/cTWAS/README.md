@@ -185,15 +185,19 @@ WARNING - user must ensure that SNPIDs are consistent amonst all three file type
 *********
 
 ```bash
+
 `-- cTWAS
     |-- config
     |   |-- config.yaml
     |   `-- meta_gtex_49.tsv
+    |  
     |-- envs
     |   |-- ctwas.yaml
     |   `-- SnakeMake.yaml
+    |
     |-- README.md
     |-- script_params.md
+    |
     |-- scripts
     |   |-- 1_prepare_referece.R
     |   |-- 2_Process_GWAS.R
@@ -202,9 +206,12 @@ WARNING - user must ensure that SNPIDs are consistent amonst all three file type
     |   |-- 5_summarise.R
     |   |-- utils.R
     |   `-- Weights_from_sumstats.R
+    |
     |-- shell
+    |   |
     |   |-- jobs
     |   |   `-- Test.sh
+    |   |
     |   |-- MANUAL_SLURM_ARRAY
     |   |   |-- 1_prepare_refrence.sh
     |   |   |-- 2_Process_GWAS.sh
@@ -212,11 +219,13 @@ WARNING - user must ensure that SNPIDs are consistent amonst all three file type
     |   |   |-- 4_tissue_single_cTWAS_Runner_ar.sh
     |   |   |-- 5_tissue_single_visualise.sh
     |   |   `-- weight_config.yaml
+    |   |
     |   `-- profiles
     |       |-- config.yaml
     |       |-- slurm-jobscript.sh
     |       `-- status-sacct.sh
-    `-- Snakefile```
+    |
+    `-- Snakefile
 ```
 
 
