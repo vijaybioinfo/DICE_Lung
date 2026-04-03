@@ -28,7 +28,7 @@ https://xinhe-lab.github.io/multigroup_ctwas/
 
 **This repo**
 
-The codes in this repo wraps native cTWAS (multi-group) functions to permit streamlined processing inputs for the following steps:
+The codes in this repo wrap native cTWAS (multi-group) functions for a streamlined processing of inputs for the following steps:
 
 1) GWAS study harmonisation with LD panels.
 2) Harmonisation of molecular QTL prediction models with GWAS studies and LD panels.
