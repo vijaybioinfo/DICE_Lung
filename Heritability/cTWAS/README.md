@@ -136,8 +136,6 @@ Heritability/
     └── Snakefile
 ```
 
----
-
 ## Overview
 
 ### **config/**
@@ -145,20 +143,14 @@ Configuration for pipeline execution
 - `config.yaml` — main Snakemake settings  
 - `meta_gtex_49.tsv` — defines GWAS–model combinations and sample sizes  
 
----
-
 ### **envs/**
 Environment definitions (mamba/conda)  
 - `ctwas.yaml` — core cTWAS dependencies  
 - `snakemake.yaml` — separate environment to avoid conflicts  
 
----
-
 ### **scripts/**
 R wrapper scripts used by the workflow  
 - See `script_params.md` for details  
-
----
 
 ### **shell/**
 Cluster execution (Herman / SLURM)  
@@ -166,12 +158,8 @@ Cluster execution (Herman / SLURM)
 - `MANUAL_SLURM_ARRAY/` — run steps independently  
 - `profiles/` — Snakemake cluster configuration  
 
----
-
 ### **Snakefile**
 Main workflow defining the cTWAS pipeline  
-
----
 
 ## Notes
 - Shell scripts mirror Snakemake rules for modular execution  
