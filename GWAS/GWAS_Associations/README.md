@@ -9,11 +9,19 @@ This repository contains snakemake-based gene-prioritization
 analyses to identify potential causal genes relevant in disease.
 
 Workflows:
+
+
 1.- GWAS: This workflow attempts to clean GWAS data to keep a 
 consistent data format and aligns alleles to a reference panel.
+
+
 2.- Overlap: Perfoms overlap between GWAS snps and QTL data.
+
+
 3.- Coloc: Powered by coloc packages this workflow performs 
 colocalization analysis between two traits.
+
+
 4.- MESC: Powered by mesc package this workflow performs 
 expression-mediated heritability analysis between a gwas
 trait and eqtls.
