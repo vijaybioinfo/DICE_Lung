@@ -23,11 +23,14 @@ Description
 ----------------
 In this repository you'll find 2 folders and 1 yaml file:
 
+
 1.- examples: contains example data and configuration files
 needed to run each workflow.
 
+
 2.- R24: in this folder you can find all scripts and snakefiles
 for all three workflows.
+
 
 3.- R24.yaml: yaml file needed to set up the main envioroment 
 needed by the workflows.
